@@ -1,0 +1,123 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: OneBusAway
+providerId: onebusaway
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - Transit
+  - Public Transit
+  - Real-Time
+  - Open Source
+  - GTFS
+description: >-
+  OneBusAway is an open-source platform; there is no commercial SaaS pricing
+  for the API itself. The reference Puget Sound deployment
+  (api.pugetsound.onebusaway.org) is publicly accessible and requires a free
+  API key. Transit agencies self-host OneBusAway using the open-source
+  application modules; each deployment controls its own key issuance and
+  throttling policy. The plan tiers below reflect the open/self-hosted model
+  rather than a paid cloud service.
+plans:
+  - id: onebusaway-public
+    name: Public Open Access
+    type: freemium
+    description: >-
+      Free API key for accessing any publicly hosted OneBusAway deployment
+      (e.g., the Puget Sound reference server). Keys are issued by each
+      deployment administrator and are used for usage tracking and basic
+      connection throttling. No monetary cost; rate limits are configurable
+      per deployment and are not globally published.
+    entries:
+      - label: API Requests
+        description: >-
+          Monthly request quota; limits are set per deployment and per key by
+          the hosting agency. No globally published cap on the public reference
+          server.
+        name: api_requests
+        type: quota
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://api.pugetsound.onebusaway.org
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Rate Limit
+        description: >-
+          Connection throttling to prevent abuse; specific requests-per-minute
+          thresholds are configurable by the deployment administrator and not
+          publicly documented. The SDK retries on HTTP 429 automatically.
+        name: rate_limit
+        type: rate
+        metric: requests_per_minute
+        limit: 60
+        timeFrame: minute
+        geo: global
+        domains:
+          - https://api.pugetsound.onebusaway.org
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: All REST API Endpoints
+      - name: JSON and XML Responses
+      - name: Real-Time Arrivals and Departures
+      - name: Schedule Data
+      - name: Agency, Route, Stop, and Trip Lookups
+      - name: Vehicle Positions
+      - name: Problem Reporting Endpoints
+      - name: Community Support via GitHub and Slack
+  - id: onebusaway-self-hosted
+    name: Self-Hosted Deployment
+    type: paid
+    description: >-
+      Transit agencies and organizations can deploy OneBusAway on their own
+      infrastructure using the open-source application modules (Java) or the
+      next-generation Maglev server (Go). Infrastructure costs are borne by
+      the deploying organization. Full administrative control over API keys,
+      rate limits, and data sources.
+    entries:
+      - label: API Requests
+        description: >-
+          Unlimited by software license; bounded only by the deploying
+          organization's infrastructure capacity.
+        name: api_requests
+        type: quota
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: configurable
+        domains: []
+        unit: 1
+        price: custom
+        userMultiplied: false
+      - label: Rate Limit
+        description: >-
+          Fully configurable per API key via the admin interface or
+          data-sources.xml configuration.
+        name: rate_limit
+        type: rate
+        metric: requests_per_minute
+        limit: -1
+        timeFrame: minute
+        geo: configurable
+        domains: []
+        unit: 1
+        price: custom
+        userMultiplied: false
+    elements:
+      - name: Full API Surface
+      - name: Admin Key Management Interface
+      - name: GTFS and GTFS-Realtime Data Ingestion
+      - name: Custom Agency Branding
+      - name: SMS and IVR Integration (Twilio module)
+      - name: Waystation Arrival Display Support
+      - name: Android and iOS App White-labeling
+      - name: Open Transit Software Foundation Community Support
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,143 @@
+aid: onebusaway
+name: OneBusAway
+description: >-
+  OneBusAway is an open-source real-time transit information platform managed
+  by the Open Transit Software Foundation. It provides transit riders with
+  real-time arrival predictions, service alerts, and schedule data for buses,
+  trains, and other transit modes. The platform exposes a RESTful API that
+  lets developers access agency information, stop data, route details, trip
+  information, real-time arrivals and departures, vehicle positions, and
+  service alerts. Authentication uses an API key passed as a query parameter.
+  The reference deployment runs at api.pugetsound.onebusaway.org; many transit
+  agencies host their own OneBusAway instances using the same API contract.
+  Official SDKs are published for Go, Java, Kotlin, JavaScript/Node.js,
+  Python, and Ruby, all generated from a shared OpenAPI 3.0 specification in
+  the sdk-config repository.
+type: Index
+position: Provider
+access: Open
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Transit
+  - Public Transit
+  - Real-Time
+  - Arrivals
+  - Departures
+  - Bus
+  - GTFS
+  - Open Source
+  - Stop Data
+  - Trip Planning
+  - Service Alerts
+  - Vehicle Positions
+  - Open Data
+url: https://raw.githubusercontent.com/api-evangelist/onebusaway/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.20'
+apis:
+  - aid: onebusaway:onebusaway-rest-api
+    name: OneBusAway REST API
+    description: >-
+      RESTful web service providing real-time and scheduled transit data for
+      agencies running the OneBusAway platform. Endpoints cover agencies with
+      coverage, individual agency details, routes, stops, trips, real-time
+      arrivals and departures, active vehicle positions, schedule information
+      for stops and routes, shape/polyline data, block configuration, search
+      for stops and routes by location or name, and user-submitted problem
+      reports. Authentication is an API key supplied as the "key" query
+      parameter. Responses are available in both JSON and XML; JSON responses
+      support an optional JSONP callback parameter. The reference server is
+      the Puget Sound deployment at api.pugetsound.onebusaway.org; transit
+      agencies can self-host using the open-source application modules.
+    humanURL: https://developer.onebusaway.org/api/where
+    baseURL: https://api.pugetsound.onebusaway.org
+    tags:
+      - Transit
+      - Real-Time
+      - Arrivals
+      - Departures
+      - Stops
+      - Routes
+      - Trips
+      - Agencies
+      - Vehicle Positions
+      - Service Alerts
+      - Schedule
+      - GTFS
+    properties:
+      - type: Documentation
+        url: https://developer.onebusaway.org/api/where
+      - type: Documentation
+        url: https://developer.onebusaway.org/api/where/methods
+      - type: Documentation
+        url: https://developer.onebusaway.org/api/where/elements
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/OneBusAway/sdk-config/main/openapi.yml
+      - type: SDK
+        url: https://developer.onebusaway.org/api/sdk
+      - type: GitHubRepository
+        url: https://github.com/OneBusAway/sdk-config
+        name: OpenAPI + SDK Config
+common:
+  - type: Website
+    url: https://opentransitsoftwarefoundation.org/onebusaway/
+  - type: Portal
+    url: https://developer.onebusaway.org/
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where/methods
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where/elements
+  - type: GettingStarted
+    url: https://developer.onebusaway.org/guides/api-webapp-configuration-guide
+  - type: SDK
+    url: https://developer.onebusaway.org/api/sdk
+  - type: GitHubOrganization
+    url: https://github.com/OneBusAway
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/onebusaway-application-modules
+    name: Core Application Modules (Java)
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/maglev
+    name: Maglev — Next-Gen OBA REST API Server (Go)
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/sdk-config
+    name: OpenAPI Specification and SDK Config
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/js-sdk
+    name: JavaScript / Node.js SDK
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/python-sdk
+    name: Python SDK
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/go-sdk
+    name: Go SDK
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/java-sdk
+    name: Java SDK
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/kotlin-sdk
+    name: Kotlin SDK
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/ruby-sdk
+    name: Ruby SDK
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/onebusaway-android
+    name: Android App
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/onebusaway-ios
+    name: iOS App
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/wayfinder
+    name: Wayfinder Web App (SvelteKit)
+  - type: AppStore
+    url: https://apps.apple.com/app/onebusaway/id329380089
+  - type: PlayStore
+    url: https://play.google.com/store/apps/details?id=com.joulespersecond.seattlebusbot
+  - type: PrivacyPolicy
+    url: https://opentransitsoftwarefoundation.org/privacy-policy/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
