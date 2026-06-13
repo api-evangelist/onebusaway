@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TripStatus",
+  "type": "object",
+  "description": "Trip-specific status for the arriving transit vehicle.",
+  "properties": {
+    "activeTripId": {
+      "type": "string",
+      "description": "Trip ID of the trip the vehicle is actively serving."
+    },
+    "blockTripSequence": {
+      "type": "integer",
+      "description": "Index of the active trip into the sequence of trips for the active block."
+    },
+    "closestStop": {
+      "type": "string",
+      "description": "ID of the closest stop to the current location of the transit vehicle."
+    },
+    "closestStopTimeOffset": {
+      "type": "integer",
+      "description": "Time offset from the closest stop to the current position of the transit vehicle (in seconds)."
+    },
+    "distanceAlongTrip": {
+      "type": "number",
+      "description": "Distance, in meters, the transit vehicle has progressed along the active trip."
+    },
+    "frequency": {
+      "type": "string",
+      "nullable": true,
+      "description": "Information about frequency-based scheduling, if applicable to the trip."
+    },
+    "lastKnownDistanceAlongTrip": {
+      "type": "number",
+      "description": "Last known distance along the trip received in real-time from the transit vehicle."
+    },
+    "lastKnownLocation": {
+      "type": "object",
+      "nullable": true,
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Latitude of the last known location of the transit vehicle."
+        },
+        "lon": {
+          "type": "number",
+          "description": "Longitude of the last known location of the transit vehicle."
+        }
+      },
+      "description": "Last known location of the transit vehicle (optional)."
+    },
+    "lastKnownOrientation": {
+      "type": "number",
+      "description": "Last known orientation value received in real-time from the transit vehicle."
+    },
+    "lastLocationUpdateTime": {
+      "type": "integer",
+      "description": "Timestamp of the last known real-time location update from the transit vehicle."
+    },
+    "lastUpdateTime": {
+      "type": "integer",
+      "description": "Timestamp of the last known real-time update from the transit vehicle."
+    },
+    "nextStop": {
+      "type": "string",
+      "description": "ID of the next stop the transit vehicle is scheduled to arrive at."
+    },
+    "nextStopTimeOffset": {
+      "type": "integer",
+      "description": "Time offset from the next stop to the current position of the transit vehicle (in seconds)."
+    },
+    "occupancyCapacity": {
+      "type": "integer",
+      "description": "Capacity of the transit vehicle in terms of occupancy."
+    },
+    "occupancyCount": {
+      "type": "integer",
+      "description": "Current count of occupants in the transit vehicle."
+    },
+    "occupancyStatus": {
+      "type": "string",
+      "description": "Current occupancy status of the transit vehicle."
+    },
+    "orientation": {
+      "type": "number",
+      "description": "Orientation of the transit vehicle, represented as an angle in degrees."
+    },
+    "phase": {
+      "type": "string",
+      "description": "Current journey phase of the trip."
+    },
+    "position": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Latitude of the current position of the transit vehicle."
+        },
+        "lon": {
+          "type": "number",
+          "description": "Longitude of the current position of the transit vehicle."
+        }
+      },
+      "description": "Current position of the transit vehicle."
+    },
+    "predicted": {
+      "type": "boolean",
+      "description": "Indicates if real-time arrival info is available for this trip."
+    },
+    "scheduleDeviation": {
+      "type": "integer",
+      "description": "Deviation from the schedule in seconds (positive for late, negative for early)."
+    },
+    "scheduledDistanceAlongTrip": {
+      "type": "number",
+      "description": "Distance, in meters, the transit vehicle is scheduled to have progressed along the active trip."
+    },
+    "serviceDate": {
+      "type": "integer",
+      "description": "Time, in milliseconds since the Unix epoch, of midnight for the start of the service date for the trip."
+    },
+    "situationIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "References to situation elements (if any) applicable to this trip."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status modifiers for the trip."
+    },
+    "totalDistanceAlongTrip": {
+      "type": "number",
+      "description": "Total length of the trip, in meters."
+    },
+    "vehicleId": {
+      "type": "string",
+      "description": "ID of the transit vehicle currently serving the trip."
+    }
+  },
+  "required": [
+    "activeTripId",
+    "blockTripSequence",
+    "closestStop",
+    "distanceAlongTrip",
+    "lastKnownDistanceAlongTrip",
+    "lastLocationUpdateTime",
+    "lastUpdateTime",
+    "occupancyCapacity",
+    "occupancyCount",
+    "occupancyStatus",
+    "phase",
+    "predicted",
+    "scheduleDeviation",
+    "serviceDate",
+    "status",
+    "totalDistanceAlongTrip"
+  ]
+}

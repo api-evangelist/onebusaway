@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TripResponse",
+  "type": "object",
+  "properties": {
+    "entry": {
+      "$ref": "#/components/schemas/Trip"
+    },
+    "references": {
+      "$ref": "#/components/schemas/Reference"
+    }
+  },
+  "required": [
+    "entry",
+    "references"
+  ]
+}

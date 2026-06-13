@@ -1,0 +1,8 @@
+{
+  "operationId": "get_api_where_block_blockID.json",
+  "method": "GET",
+  "path": "/api/where/block/{blockID}.json",
+  "summary": "Get details of a specific block by ID",
+  "description": "",
+  "tags": []
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BlockStopTime",
+  "type": "object",
+  "properties": {
+    "blockSequence": {
+      "type": "integer"
+    },
+    "distanceAlongBlock": {
+      "type": "number",
+      "format": "float"
+    },
+    "accumulatedSlackTime": {
+      "type": "number",
+      "format": "float"
+    },
+    "stopTime": {
+      "type": "object",
+      "properties": {
+        "stopId": {
+          "type": "string"
+        },
+        "arrivalTime": {
+          "type": "integer"
+        },
+        "departureTime": {
+          "type": "integer"
+        },
+        "pickupType": {
+          "type": "integer"
+        },
+        "dropOffType": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "stopId",
+        "arrivalTime",
+        "departureTime"
+      ]
+    }
+  },
+  "required": [
+    "blockSequence",
+    "stopTime",
+    "distanceAlongBlock",
+    "accumulatedSlackTime"
+  ]
+}

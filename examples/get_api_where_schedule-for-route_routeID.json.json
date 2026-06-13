@@ -1,0 +1,32 @@
+{
+  "operationId": "get_api_where_schedule-for-route_routeID.json",
+  "method": "GET",
+  "path": "/api/where/schedule-for-route/{routeID}.json",
+  "summary": "Retrieve the full schedule for a route on a particular day",
+  "description": "",
+  "tags": [
+    "default"
+  ],
+  "parameters": [
+    {
+      "name": "routeID",
+      "in": "path",
+      "description": "The route id to request the schedule for",
+      "schema": {
+        "type": "string"
+      },
+      "example": "1_100223",
+      "required": true
+    },
+    {
+      "name": "date",
+      "in": "query",
+      "description": "The date for which you want to request a schedule in the format YYYY-MM-DD (optional, defaults to current date)",
+      "schema": {
+        "type": "string",
+        "format": "date"
+      },
+      "example": "2024-08-12"
+    }
+  ]
+}

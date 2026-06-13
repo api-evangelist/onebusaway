@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TimeWindow",
+  "type": "object",
+  "properties": {
+    "from": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Start time of the time window as a Unix timestamp."
+    },
+    "to": {
+      "type": "integer",
+      "format": "int64",
+      "description": "End time of the time window as a Unix timestamp."
+    }
+  },
+  "required": [
+    "from",
+    "to"
+  ]
+}

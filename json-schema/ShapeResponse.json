@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ShapeResponse",
+  "type": "object",
+  "properties": {
+    "entry": {
+      "type": "object",
+      "properties": {
+        "length": {
+          "type": "integer"
+        },
+        "levels": {
+          "type": "string"
+        },
+        "points": {
+          "type": "string",
+          "description": "Encoded polyline format representing the shape of the path"
+        }
+      },
+      "required": [
+        "length",
+        "points"
+      ]
+    },
+    "references": {
+      "$ref": "#/components/schemas/Reference"
+    }
+  },
+  "required": [
+    "entry",
+    "references"
+  ]
+}

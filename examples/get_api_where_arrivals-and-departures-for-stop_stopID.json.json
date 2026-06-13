@@ -1,0 +1,51 @@
+{
+  "operationId": "get_api_where_arrivals-and-departures-for-stop_stopID.json",
+  "method": "GET",
+  "path": "/api/where/arrivals-and-departures-for-stop/{stopID}.json",
+  "summary": "arrivals-and-departures-for-stop",
+  "description": "",
+  "tags": [
+    "default"
+  ],
+  "parameters": [
+    {
+      "name": "stopID",
+      "in": "path",
+      "required": true,
+      "schema": {
+        "type": "string"
+      },
+      "example": "1_75403"
+    },
+    {
+      "name": "minutesBefore",
+      "in": "query",
+      "required": false,
+      "schema": {
+        "type": "integer",
+        "default": 5
+      },
+      "description": "Include vehicles having arrived or departed in the previous n minutes."
+    },
+    {
+      "name": "minutesAfter",
+      "in": "query",
+      "required": false,
+      "schema": {
+        "type": "integer",
+        "default": 35
+      },
+      "description": "Include vehicles arriving or departing in the next n minutes."
+    },
+    {
+      "name": "time",
+      "in": "query",
+      "required": false,
+      "schema": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "description": "The specific time for querying the system status."
+    }
+  ]
+}

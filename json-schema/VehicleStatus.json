@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VehicleStatus",
+  "type": "object",
+  "properties": {
+    "vehicleId": {
+      "type": "string"
+    },
+    "lastUpdateTime": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "lastLocationUpdateTime": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "location": {
+      "$ref": "#/components/schemas/Location"
+    },
+    "tripId": {
+      "type": "string"
+    },
+    "tripStatus": {
+      "$ref": "#/components/schemas/TripStatus"
+    },
+    "occupancyCapacity": {
+      "type": "integer"
+    },
+    "occupancyCount": {
+      "type": "integer"
+    },
+    "occupancyStatus": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "vehicleId",
+    "lastUpdateTime",
+    "lastLocationUpdateTime"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "operationId": "get_api_where_current-time.json",
+  "method": "GET",
+  "path": "/api/where/current-time.json",
+  "summary": "current-time",
+  "description": "",
+  "tags": [
+    "default"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "operationId": "get_api_where_stop_stopID.json",
+  "method": "GET",
+  "path": "/api/where/stop/{stopID}.json",
+  "summary": "Get details of a specific stop",
+  "description": "",
+  "tags": []
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VehiclesForAgencyResponse",
+  "type": "object",
+  "properties": {
+    "list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/VehicleStatus"
+      }
+    },
+    "limitExceeded": {
+      "type": "boolean"
+    },
+    "references": {
+      "$ref": "#/components/schemas/Reference"
+    }
+  },
+  "required": [
+    "list",
+    "references"
+  ]
+}

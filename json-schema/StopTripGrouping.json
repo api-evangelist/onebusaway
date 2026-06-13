@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StopTripGrouping",
+  "type": "object",
+  "properties": {
+    "directionId": {
+      "type": "string"
+    },
+    "stopIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tripHeadsigns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tripIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tripsWithStopTimes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TripWithStopTimes"
+      }
+    }
+  },
+  "required": [
+    "directionId",
+    "stopIds",
+    "tripHeadsigns",
+    "tripIds"
+  ]
+}

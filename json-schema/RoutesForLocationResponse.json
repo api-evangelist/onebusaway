@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RoutesForLocationResponse",
+  "type": "object",
+  "properties": {
+    "limitExceeded": {
+      "type": "boolean"
+    },
+    "list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Route"
+      }
+    },
+    "outOfRange": {
+      "type": "boolean"
+    },
+    "references": {
+      "$ref": "#/components/schemas/Reference"
+    }
+  },
+  "required": [
+    "list",
+    "references",
+    "outOfRange"
+  ]
+}

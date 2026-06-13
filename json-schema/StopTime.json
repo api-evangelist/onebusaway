@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StopTime",
+  "type": "object",
+  "properties": {
+    "arrivalTime": {
+      "type": "integer"
+    },
+    "departureTime": {
+      "type": "integer"
+    },
+    "distanceAlongTrip": {
+      "type": "number"
+    },
+    "historicalOccupancy": {
+      "type": "string"
+    },
+    "stopHeadsign": {
+      "type": "string"
+    },
+    "stopId": {
+      "type": "string"
+    }
+  }
+}

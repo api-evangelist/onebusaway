@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BlockEntry",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "configurations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BlockConfiguration"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "configurations"
+  ]
+}

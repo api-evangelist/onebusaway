@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScheduleEntry",
+  "type": "object",
+  "properties": {
+    "routeId": {
+      "type": "string"
+    },
+    "scheduleDate": {
+      "type": "integer"
+    },
+    "serviceIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stopTripGroupings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/StopTripGrouping"
+      }
+    }
+  },
+  "required": [
+    "routeId",
+    "scheduleDate",
+    "serviceIds",
+    "stopTripGroupings"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "operationId": "get_api_where_schedule-for-stop_stopID.json",
+  "method": "GET",
+  "path": "/api/where/schedule-for-stop/{stopID}.json",
+  "summary": "Get schedule for a specific stop",
+  "description": "",
+  "tags": [],
+  "parameters": [
+    {
+      "name": "stopID",
+      "in": "path",
+      "required": true,
+      "schema": {
+        "type": "string"
+      },
+      "description": "The stop id to request the schedule for, encoded directly in the URL"
+    },
+    {
+      "name": "date",
+      "in": "query",
+      "required": false,
+      "schema": {
+        "type": "string",
+        "format": "date"
+      },
+      "description": "The date for which you want to request a schedule in the format YYYY-MM-DD (optional, defaults to the current date)"
+    }
+  ]
+}

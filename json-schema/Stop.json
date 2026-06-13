@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stop",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "locationType": {
+      "type": "integer"
+    },
+    "lon": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "parent": {
+      "type": "string"
+    },
+    "routeIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "staticRouteIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "wheelchairBoarding": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "lat",
+    "lon",
+    "name",
+    "parent",
+    "routeIds",
+    "staticRouteIds",
+    "locationType"
+  ]
+}

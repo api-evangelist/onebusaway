@@ -1,0 +1,19 @@
+{
+  "operationId": "get_api_where_route_routeID.json",
+  "method": "GET",
+  "path": "/api/where/route/{routeID}.json",
+  "summary": "Retrieve info for a specific route identified by ID",
+  "description": "Retrieve information for a specific route identified by its unique ID.",
+  "tags": [],
+  "parameters": [
+    {
+      "name": "routeID",
+      "in": "path",
+      "required": true,
+      "description": "The ID of the route.",
+      "schema": {
+        "type": "string"
+      }
+    }
+  ]
+}

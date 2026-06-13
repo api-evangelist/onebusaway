@@ -1,0 +1,10 @@
+{
+  "operationId": "get_api_where_config.json",
+  "method": "GET",
+  "path": "/api/where/config.json",
+  "summary": "config",
+  "description": "",
+  "tags": [
+    "default"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArrivalsDeparturesForLocationResponse",
+  "type": "object",
+  "properties": {
+    "entry": {
+      "type": "object",
+      "properties": {
+        "stopIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "arrivalsAndDepartures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ArrivalDepartureForStop"
+          }
+        },
+        "nearbyStopIds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stopId": {
+                "type": "string"
+              },
+              "distanceFromQuery": {
+                "type": "number",
+                "format": "double"
+              }
+            }
+          }
+        },
+        "situationIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitExceeded": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "stopIds",
+        "arrivalsAndDepartures",
+        "nearbyStopIds",
+        "limitExceeded"
+      ]
+    },
+    "references": {
+      "$ref": "#/components/schemas/Reference"
+    }
+  },
+  "required": [
+    "entry",
+    "references"
+  ]
+}

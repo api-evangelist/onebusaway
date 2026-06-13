@@ -1,0 +1,19 @@
+{
+  "operationId": "get_api_where_shape_shapeID.json",
+  "method": "GET",
+  "path": "/api/where/shape/{shapeID}.json",
+  "summary": "Retrieve a shape by ID",
+  "description": "Retrieve a shape (the path traveled by a transit vehicle) by ID.",
+  "tags": [],
+  "parameters": [
+    {
+      "name": "shapeID",
+      "in": "path",
+      "required": true,
+      "description": "The shape ID, encoded directly in the URL",
+      "schema": {
+        "type": "string"
+      }
+    }
+  ]
+}

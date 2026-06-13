@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArrivalDepartureForStop",
+  "type": "object",
+  "properties": {
+    "actualTrack": {
+      "type": "string",
+      "description": "The actual track information of the arriving transit vehicle."
+    },
+    "arrivalEnabled": {
+      "type": "boolean",
+      "description": "Indicates if riders can arrive on this transit vehicle."
+    },
+    "blockTripSequence": {
+      "type": "integer",
+      "description": "Index of this arrival\u2019s trip into the sequence of trips for the active block."
+    },
+    "departureEnabled": {
+      "type": "boolean",
+      "description": "Indicates if riders can depart from this transit vehicle."
+    },
+    "distanceFromStop": {
+      "type": "number",
+      "description": "Distance of the arriving transit vehicle from the stop, in meters."
+    },
+    "frequency": {
+      "type": "string",
+      "nullable": true,
+      "description": "Information about frequency-based scheduling, if applicable to the trip."
+    },
+    "historicalOccupancy": {
+      "type": "string",
+      "description": "Historical occupancy information of the transit vehicle."
+    },
+    "lastUpdateTime": {
+      "type": "integer",
+      "description": "Timestamp of the last update time for this arrival."
+    },
+    "numberOfStopsAway": {
+      "type": "integer",
+      "description": "Number of stops between the arriving transit vehicle and the current stop (excluding the current stop)."
+    },
+    "occupancyStatus": {
+      "type": "string",
+      "description": "Current occupancy status of the transit vehicle."
+    },
+    "predicted": {
+      "type": "boolean",
+      "description": "Indicates if real-time arrival info is available for this trip."
+    },
+    "predictedArrivalInterval": {
+      "type": "string",
+      "nullable": true,
+      "description": "Interval for predicted arrival time, if available."
+    },
+    "predictedArrivalTime": {
+      "type": "integer",
+      "description": "Predicted arrival time, in milliseconds since Unix epoch (zero if no real-time available)."
+    },
+    "predictedDepartureInterval": {
+      "type": "string",
+      "nullable": true,
+      "description": "Interval for predicted departure time, if available."
+    },
+    "predictedDepartureTime": {
+      "type": "integer",
+      "description": "Predicted departure time, in milliseconds since Unix epoch (zero if no real-time available)."
+    },
+    "predictedOccupancy": {
+      "type": "string",
+      "description": "Predicted occupancy status of the transit vehicle."
+    },
+    "routeId": {
+      "type": "string",
+      "description": "The ID of the route for the arriving vehicle."
+    },
+    "routeLongName": {
+      "type": "string",
+      "description": "Optional route long name that potentially overrides the route long name in the referenced route element."
+    },
+    "routeShortName": {
+      "type": "string",
+      "description": "Optional route short name that potentially overrides the route short name in the referenced route element."
+    },
+    "scheduledArrivalInterval": {
+      "type": "string",
+      "nullable": true,
+      "description": "Interval for scheduled arrival time."
+    },
+    "scheduledArrivalTime": {
+      "type": "integer",
+      "description": "Scheduled arrival time, in milliseconds since Unix epoch."
+    },
+    "scheduledDepartureInterval": {
+      "type": "string",
+      "nullable": true,
+      "description": "Interval for scheduled departure time."
+    },
+    "scheduledDepartureTime": {
+      "type": "integer",
+      "description": "Scheduled departure time, in milliseconds since Unix epoch."
+    },
+    "scheduledTrack": {
+      "type": "string",
+      "description": "Scheduled track information of the arriving transit vehicle."
+    },
+    "serviceDate": {
+      "type": "integer",
+      "description": "Time, in milliseconds since the Unix epoch, of midnight for the start of the service date for the trip."
+    },
+    "situationIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "References to situation elements (if any) applicable to this arrival."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the arrival."
+    },
+    "stopId": {
+      "type": "string",
+      "description": "The ID of the stop the vehicle is arriving at."
+    },
+    "stopSequence": {
+      "type": "integer",
+      "description": "Index of the stop into the sequence of stops that make up the trip for this arrival."
+    },
+    "totalStopsInTrip": {
+      "type": "integer",
+      "description": "Total number of stops visited on the trip for this arrival."
+    },
+    "tripHeadsign": {
+      "type": "string",
+      "description": "Optional trip headsign that potentially overrides the trip headsign in the referenced trip element."
+    },
+    "tripId": {
+      "type": "string",
+      "description": "The ID of the trip for the arriving vehicle."
+    },
+    "tripStatus": {
+      "$ref": "#/components/schemas/TripStatus"
+    },
+    "vehicleId": {
+      "type": "string",
+      "description": "ID of the transit vehicle serving this trip."
+    }
+  },
+  "required": [
+    "stopId",
+    "tripId",
+    "serviceDate",
+    "routeId",
+    "scheduledArrivalTime",
+    "scheduledDepartureTime",
+    "predictedArrivalTime",
+    "predictedDepartureTime",
+    "stopSequence",
+    "totalStopsInTrip",
+    "tripHeadsign",
+    "vehicleId",
+    "blockTripSequence",
+    "arrivalEnabled",
+    "departureEnabled",
+    "numberOfStopsAway"
+  ]
+}

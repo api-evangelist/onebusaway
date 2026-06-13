@@ -1,0 +1,682 @@
+{
+  "title": "OneBusAway API Vocabulary",
+  "description": "Terms and concepts derived from the OneBusAway OpenAPI specification.",
+  "source": "https://raw.githubusercontent.com/OneBusAway/sdk-config/main/openapi.yml",
+  "version": "0.0.2",
+  "tags": [
+    "default"
+  ],
+  "schemas": [
+    {
+      "name": "Agency",
+      "description": "",
+      "properties": [
+        "disclaimer",
+        "email",
+        "fareUrl",
+        "id",
+        "lang",
+        "name",
+        "phone",
+        "privateService",
+        "timezone",
+        "url"
+      ]
+    },
+    {
+      "name": "VehicleStatus",
+      "description": "",
+      "properties": [
+        "vehicleId",
+        "lastUpdateTime",
+        "lastLocationUpdateTime",
+        "location",
+        "tripId",
+        "tripStatus",
+        "occupancyCapacity",
+        "occupancyCount",
+        "occupancyStatus",
+        "phase",
+        "status"
+      ]
+    },
+    {
+      "name": "VehiclesForAgencyResponse",
+      "description": "",
+      "properties": [
+        "list",
+        "limitExceeded",
+        "references"
+      ]
+    },
+    {
+      "name": "Coverage",
+      "description": "",
+      "properties": [
+        "agencyId",
+        "lat",
+        "latSpan",
+        "lon",
+        "lonSpan"
+      ]
+    },
+    {
+      "name": "AgencyResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "CoverageResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "list",
+        "references"
+      ]
+    },
+    {
+      "name": "CurrentTime",
+      "description": "",
+      "properties": [
+        "readableTime",
+        "time"
+      ]
+    },
+    {
+      "name": "CurrentTimeResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "ResponseWrapper",
+      "description": "",
+      "properties": [
+        "code",
+        "currentTime",
+        "text",
+        "version"
+      ]
+    },
+    {
+      "name": "Reference",
+      "description": "",
+      "properties": [
+        "agencies",
+        "routes",
+        "situations",
+        "stopTimes",
+        "stops",
+        "trips"
+      ]
+    },
+    {
+      "name": "Route",
+      "description": "",
+      "properties": [
+        "agencyId",
+        "color",
+        "description",
+        "id",
+        "longName",
+        "nullSafeShortName",
+        "shortName",
+        "textColor",
+        "type",
+        "url"
+      ]
+    },
+    {
+      "name": "Situation",
+      "description": "",
+      "properties": [
+        "id",
+        "creationTime",
+        "reason",
+        "summary",
+        "description",
+        "url",
+        "activeWindows",
+        "allAffects",
+        "consequences",
+        "publicationWindows",
+        "severity",
+        "consequenceMessage"
+      ]
+    },
+    {
+      "name": "TimeWindow",
+      "description": "",
+      "properties": [
+        "from",
+        "to"
+      ]
+    },
+    {
+      "name": "Stop",
+      "description": "",
+      "properties": [
+        "code",
+        "direction",
+        "id",
+        "lat",
+        "locationType",
+        "lon",
+        "name",
+        "parent",
+        "routeIds",
+        "staticRouteIds",
+        "wheelchairBoarding"
+      ]
+    },
+    {
+      "name": "Trip",
+      "description": "",
+      "properties": [
+        "blockId",
+        "directionId",
+        "id",
+        "peakOffpeak",
+        "routeId",
+        "routeShortName",
+        "serviceId",
+        "shapeId",
+        "timeZone",
+        "tripHeadsign",
+        "tripShortName"
+      ]
+    },
+    {
+      "name": "Config",
+      "description": "",
+      "properties": [
+        "gitProperties",
+        "id",
+        "name",
+        "serviceDateFrom",
+        "serviceDateTo"
+      ]
+    },
+    {
+      "name": "ConfigResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "StopsForLocationResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "outOfRange",
+        "list",
+        "references"
+      ]
+    },
+    {
+      "name": "StopsForAgencyResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "outOfRange",
+        "list",
+        "references"
+      ]
+    },
+    {
+      "name": "ArrivalDepartureForStop",
+      "description": "",
+      "properties": [
+        "actualTrack",
+        "arrivalEnabled",
+        "blockTripSequence",
+        "departureEnabled",
+        "distanceFromStop",
+        "frequency",
+        "historicalOccupancy",
+        "lastUpdateTime",
+        "numberOfStopsAway",
+        "occupancyStatus",
+        "predicted",
+        "predictedArrivalInterval",
+        "predictedArrivalTime",
+        "predictedDepartureInterval",
+        "predictedDepartureTime",
+        "predictedOccupancy",
+        "routeId",
+        "routeLongName",
+        "routeShortName",
+        "scheduledArrivalInterval",
+        "scheduledArrivalTime",
+        "scheduledDepartureInterval",
+        "scheduledDepartureTime",
+        "scheduledTrack",
+        "serviceDate",
+        "situationIds",
+        "status",
+        "stopId",
+        "stopSequence",
+        "totalStopsInTrip",
+        "tripHeadsign",
+        "tripId",
+        "tripStatus",
+        "vehicleId"
+      ]
+    },
+    {
+      "name": "ScheduleEntry",
+      "description": "",
+      "properties": [
+        "routeId",
+        "scheduleDate",
+        "serviceIds",
+        "stopTripGroupings"
+      ]
+    },
+    {
+      "name": "StopTripGrouping",
+      "description": "",
+      "properties": [
+        "directionId",
+        "stopIds",
+        "tripHeadsigns",
+        "tripIds",
+        "tripsWithStopTimes"
+      ]
+    },
+    {
+      "name": "TripWithStopTimes",
+      "description": "",
+      "properties": [
+        "tripId",
+        "stopTimes"
+      ]
+    },
+    {
+      "name": "ArrivalDepartureForStopResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "RoutesForLocationResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "list",
+        "outOfRange",
+        "references"
+      ]
+    },
+    {
+      "name": "ScheduleForRouteResponse",
+      "description": "",
+      "properties": [
+        "entry"
+      ]
+    },
+    {
+      "name": "ArrivalsDeparturesForStopResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "ArrivalsDeparturesForLocationResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "RouteResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "RouteIDsForAgencyResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "list",
+        "references"
+      ]
+    },
+    {
+      "name": "RoutesForAgencyResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "list",
+        "references"
+      ]
+    },
+    {
+      "name": "Polylines",
+      "description": "",
+      "properties": [
+        "length",
+        "levels",
+        "points"
+      ]
+    },
+    {
+      "name": "StopGrouping",
+      "description": "",
+      "properties": [
+        "id",
+        "name",
+        "polylines",
+        "stopIds"
+      ]
+    },
+    {
+      "name": "StopsForRouteResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "TripEntry",
+      "description": "",
+      "properties": [
+        "frequency",
+        "schedule",
+        "serviceDate",
+        "situationIds",
+        "status",
+        "tripId"
+      ]
+    },
+    {
+      "name": "TripStatus",
+      "description": "Trip-specific status for the arriving transit vehicle.",
+      "properties": [
+        "activeTripId",
+        "blockTripSequence",
+        "closestStop",
+        "closestStopTimeOffset",
+        "distanceAlongTrip",
+        "frequency",
+        "lastKnownDistanceAlongTrip",
+        "lastKnownLocation",
+        "lastKnownOrientation",
+        "lastLocationUpdateTime",
+        "lastUpdateTime",
+        "nextStop",
+        "nextStopTimeOffset",
+        "occupancyCapacity",
+        "occupancyCount",
+        "occupancyStatus",
+        "orientation",
+        "phase",
+        "position",
+        "predicted",
+        "scheduleDeviation",
+        "scheduledDistanceAlongTrip",
+        "serviceDate",
+        "situationIds",
+        "status",
+        "totalDistanceAlongTrip",
+        "vehicleId"
+      ]
+    },
+    {
+      "name": "TripDetails",
+      "description": "",
+      "properties": [
+        "frequency",
+        "serviceDate",
+        "situationIds",
+        "tripId",
+        "schedule",
+        "status"
+      ]
+    },
+    {
+      "name": "TripSchedule",
+      "description": "",
+      "properties": [
+        "frequency",
+        "nextTripId",
+        "previousTripId",
+        "stopTimes",
+        "timeZone"
+      ]
+    },
+    {
+      "name": "StopTime",
+      "description": "",
+      "properties": [
+        "arrivalTime",
+        "departureTime",
+        "distanceAlongTrip",
+        "historicalOccupancy",
+        "stopHeadsign",
+        "stopId"
+      ]
+    },
+    {
+      "name": "Location",
+      "description": "",
+      "properties": [
+        "lat",
+        "lon"
+      ]
+    },
+    {
+      "name": "TripResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "TripsForLocationResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "list",
+        "outOfRange",
+        "references"
+      ]
+    },
+    {
+      "name": "TripDetailsResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "TripVehicleResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "StopResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "StopIDsForAgencyResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "list",
+        "references"
+      ]
+    },
+    {
+      "name": "ScheduleFrequency",
+      "description": "",
+      "properties": [
+        "serviceDate",
+        "startTime",
+        "endTime",
+        "headway",
+        "serviceId",
+        "tripId"
+      ]
+    },
+    {
+      "name": "StopRouteDirectionSchedule",
+      "description": "",
+      "properties": [
+        "scheduleFrequencies",
+        "scheduleStopTimes",
+        "tripHeadsign"
+      ]
+    },
+    {
+      "name": "ScheduleStopTime",
+      "description": "",
+      "properties": [
+        "arrivalEnabled",
+        "arrivalTime",
+        "departureEnabled",
+        "departureTime",
+        "serviceId",
+        "stopHeadsign",
+        "tripId"
+      ]
+    },
+    {
+      "name": "DetailedScheduleStopTime",
+      "description": "",
+      "properties": [
+        "arrivalEnabled",
+        "arrivalTime",
+        "departureEnabled",
+        "departureTime",
+        "serviceId",
+        "stopHeadsign",
+        "stopId",
+        "tripId"
+      ]
+    },
+    {
+      "name": "StopRouteSchedule",
+      "description": "",
+      "properties": [
+        "routeId",
+        "stopRouteDirectionSchedules"
+      ]
+    },
+    {
+      "name": "ScheduleForStopEntry",
+      "description": "",
+      "properties": [
+        "date",
+        "stopId",
+        "stopRouteSchedules"
+      ]
+    },
+    {
+      "name": "ScheduleForStopResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "SearchStopResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "list",
+        "outOfRange",
+        "references"
+      ]
+    },
+    {
+      "name": "BlockResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "BlockEntry",
+      "description": "",
+      "properties": [
+        "id",
+        "configurations"
+      ]
+    },
+    {
+      "name": "BlockConfiguration",
+      "description": "",
+      "properties": [
+        "activeServiceIds",
+        "inactiveServiceIds",
+        "trips"
+      ]
+    },
+    {
+      "name": "BlockTrip",
+      "description": "",
+      "properties": [
+        "tripId",
+        "distanceAlongBlock",
+        "accumulatedSlackTime",
+        "blockStopTimes"
+      ]
+    },
+    {
+      "name": "BlockStopTime",
+      "description": "",
+      "properties": [
+        "blockSequence",
+        "distanceAlongBlock",
+        "accumulatedSlackTime",
+        "stopTime"
+      ]
+    },
+    {
+      "name": "ShapeResponse",
+      "description": "",
+      "properties": [
+        "entry",
+        "references"
+      ]
+    },
+    {
+      "name": "SearchRouteResponse",
+      "description": "",
+      "properties": [
+        "limitExceeded",
+        "list",
+        "outOfRange",
+        "references"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "operationId": "get_api_where_stop-ids-for-agency_agencyID.json",
+  "method": "GET",
+  "path": "/api/where/stop-ids-for-agency/{agencyID}.json",
+  "summary": "Get stop IDs for a specific agency",
+  "description": "",
+  "tags": []
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScheduleForStopEntry",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "stopId": {
+      "type": "string"
+    },
+    "stopRouteSchedules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/StopRouteSchedule"
+      }
+    }
+  },
+  "required": [
+    "date",
+    "stopId",
+    "stopRouteSchedules"
+  ]
+}

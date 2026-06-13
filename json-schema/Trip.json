@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Trip",
+  "type": "object",
+  "properties": {
+    "blockId": {
+      "type": "string"
+    },
+    "directionId": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "peakOffpeak": {
+      "type": "integer"
+    },
+    "routeId": {
+      "type": "string"
+    },
+    "routeShortName": {
+      "type": "string"
+    },
+    "serviceId": {
+      "type": "string"
+    },
+    "shapeId": {
+      "type": "string"
+    },
+    "timeZone": {
+      "type": "string"
+    },
+    "tripHeadsign": {
+      "type": "string"
+    },
+    "tripShortName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "routeId",
+    "serviceId"
+  ]
+}

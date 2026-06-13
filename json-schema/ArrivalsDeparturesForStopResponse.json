@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArrivalsDeparturesForStopResponse",
+  "type": "object",
+  "properties": {
+    "entry": {
+      "type": "object",
+      "properties": {
+        "arrivalsAndDepartures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ArrivalDepartureForStop"
+          }
+        }
+      },
+      "required": [
+        "arrivalsAndDepartures"
+      ]
+    },
+    "references": {
+      "$ref": "#/components/schemas/Reference"
+    }
+  },
+  "required": [
+    "entry",
+    "references"
+  ]
+}

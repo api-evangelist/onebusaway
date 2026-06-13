@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RouteIDsForAgencyResponse",
+  "type": "object",
+  "properties": {
+    "limitExceeded": {
+      "type": "boolean"
+    },
+    "list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "references": {
+      "$ref": "#/components/schemas/Reference"
+    }
+  },
+  "required": [
+    "list",
+    "references"
+  ]
+}

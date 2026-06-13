@@ -1,0 +1,69 @@
+{
+  "operationId": "get_api_where_stops-for-location.json",
+  "method": "GET",
+  "path": "/api/where/stops-for-location.json",
+  "summary": "stops-for-location",
+  "description": "",
+  "tags": [
+    "default"
+  ],
+  "parameters": [
+    {
+      "name": "lat",
+      "in": "query",
+      "required": true,
+      "schema": {
+        "type": "number"
+      },
+      "example": 47.656422
+    },
+    {
+      "name": "lon",
+      "in": "query",
+      "required": true,
+      "schema": {
+        "type": "number"
+      },
+      "example": -122.305641
+    },
+    {
+      "name": "radius",
+      "in": "query",
+      "required": false,
+      "description": "The radius in meters to search within",
+      "schema": {
+        "type": "number"
+      },
+      "example": 1000
+    },
+    {
+      "name": "latSpan",
+      "in": "query",
+      "required": false,
+      "description": "An alternative to radius to set the search bounding box (optional)",
+      "schema": {
+        "type": "number"
+      },
+      "example": 0.01
+    },
+    {
+      "name": "lonSpan",
+      "in": "query",
+      "required": false,
+      "description": "An alternative to radius to set the search bounding box (optional)",
+      "schema": {
+        "type": "number"
+      },
+      "example": 0.01
+    },
+    {
+      "name": "query",
+      "in": "query",
+      "required": false,
+      "description": "A search query string to filter the results",
+      "schema": {
+        "type": "string"
+      }
+    }
+  ]
+}

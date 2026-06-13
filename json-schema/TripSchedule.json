@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TripSchedule",
+  "type": "object",
+  "nullable": true,
+  "properties": {
+    "frequency": {
+      "type": "string",
+      "nullable": true
+    },
+    "nextTripId": {
+      "type": "string"
+    },
+    "previousTripId": {
+      "type": "string"
+    },
+    "stopTimes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/StopTime"
+      }
+    },
+    "timeZone": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "stopTimes",
+    "timeZone",
+    "nextTripId",
+    "previousTripId"
+  ]
+}

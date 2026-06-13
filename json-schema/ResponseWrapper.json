@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ResponseWrapper",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "currentTime": {
+      "type": "integer"
+    },
+    "text": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "code",
+    "currentTime",
+    "text",
+    "version"
+  ]
+}

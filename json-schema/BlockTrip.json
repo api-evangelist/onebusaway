@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BlockTrip",
+  "type": "object",
+  "properties": {
+    "tripId": {
+      "type": "string"
+    },
+    "distanceAlongBlock": {
+      "type": "number",
+      "format": "float"
+    },
+    "accumulatedSlackTime": {
+      "type": "number",
+      "format": "float"
+    },
+    "blockStopTimes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/BlockStopTime"
+      }
+    }
+  },
+  "required": [
+    "tripId",
+    "blockStopTimes",
+    "distanceAlongBlock",
+    "accumulatedSlackTime"
+  ]
+}

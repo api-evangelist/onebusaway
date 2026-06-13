@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StopRouteDirectionSchedule",
+  "type": "object",
+  "properties": {
+    "scheduleFrequencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ScheduleFrequency"
+      }
+    },
+    "scheduleStopTimes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ScheduleStopTime"
+      }
+    },
+    "tripHeadsign": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "scheduleStopTimes",
+    "tripHeadsign"
+  ]
+}

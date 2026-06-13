@@ -1,0 +1,62 @@
+{
+  "operationId": "get_api_where_routes-for-location.json",
+  "method": "GET",
+  "path": "/api/where/routes-for-location.json",
+  "summary": "routes-for-location",
+  "description": "",
+  "tags": [
+    "default"
+  ],
+  "parameters": [
+    {
+      "name": "lat",
+      "in": "query",
+      "schema": {
+        "type": "number"
+      },
+      "example": 47.653435,
+      "required": true
+    },
+    {
+      "name": "lon",
+      "in": "query",
+      "schema": {
+        "type": "number"
+      },
+      "example": -122.305641,
+      "required": true
+    },
+    {
+      "name": "radius",
+      "in": "query",
+      "schema": {
+        "type": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "latSpan",
+      "in": "query",
+      "schema": {
+        "type": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "lonSpan",
+      "in": "query",
+      "schema": {
+        "type": "number"
+      },
+      "required": false
+    },
+    {
+      "name": "query",
+      "in": "query",
+      "schema": {
+        "type": "string"
+      },
+      "required": false
+    }
+  ]
+}

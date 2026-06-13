@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ScheduleStopTime",
+  "type": "object",
+  "properties": {
+    "arrivalEnabled": {
+      "type": "boolean"
+    },
+    "arrivalTime": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "departureEnabled": {
+      "type": "boolean"
+    },
+    "departureTime": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "serviceId": {
+      "type": "string"
+    },
+    "stopHeadsign": {
+      "type": "string"
+    },
+    "tripId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "arrivalEnabled",
+    "arrivalTime",
+    "departureEnabled",
+    "departureTime",
+    "serviceId",
+    "tripId"
+  ]
+}

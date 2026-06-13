@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TripEntry",
+  "type": "object",
+  "properties": {
+    "frequency": {
+      "type": "string",
+      "nullable": true
+    },
+    "schedule": {
+      "$ref": "#/components/schemas/TripSchedule"
+    },
+    "serviceDate": {
+      "type": "integer"
+    },
+    "situationIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "$ref": "#/components/schemas/TripStatus"
+    },
+    "tripId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tripId"
+  ]
+}

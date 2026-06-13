@@ -1,0 +1,74 @@
+{
+  "operationId": "reportProblemWithStop",
+  "method": "GET",
+  "path": "/api/where/report-problem-with-stop/{stopID}.json",
+  "summary": "Submit a user-generated problem report for a stop",
+  "description": "",
+  "tags": [],
+  "parameters": [
+    {
+      "name": "stopID",
+      "in": "path",
+      "required": true,
+      "description": "The ID of the stop",
+      "schema": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "code",
+      "in": "query",
+      "required": false,
+      "description": "A string code identifying the nature of the problem",
+      "schema": {
+        "type": "string",
+        "enum": [
+          "stop_name_wrong",
+          "stop_number_wrong",
+          "stop_location_wrong",
+          "route_or_trip_missing",
+          "other"
+        ]
+      }
+    },
+    {
+      "name": "userComment",
+      "in": "query",
+      "required": false,
+      "description": "Additional comment text supplied by the user describing the problem",
+      "schema": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "userLat",
+      "in": "query",
+      "required": false,
+      "description": "The reporting user\u2019s current latitude",
+      "schema": {
+        "type": "number",
+        "format": "float"
+      }
+    },
+    {
+      "name": "userLon",
+      "in": "query",
+      "required": false,
+      "description": "The reporting user\u2019s current longitude",
+      "schema": {
+        "type": "number",
+        "format": "float"
+      }
+    },
+    {
+      "name": "userLocationAccuracy",
+      "in": "query",
+      "required": false,
+      "description": "The reporting user\u2019s location accuracy, in meters",
+      "schema": {
+        "type": "number",
+        "format": "float"
+      }
+    }
+  ]
+}

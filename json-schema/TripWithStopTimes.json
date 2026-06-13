@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TripWithStopTimes",
+  "type": "object",
+  "properties": {
+    "tripId": {
+      "type": "string"
+    },
+    "stopTimes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DetailedScheduleStopTime"
+      }
+    }
+  },
+  "required": [
+    "tripId",
+    "stopTimes"
+  ]
+}

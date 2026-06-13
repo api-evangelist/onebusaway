@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Config",
+  "type": "object",
+  "properties": {
+    "gitProperties": {
+      "type": "object",
+      "properties": {
+        "git.branch": {
+          "type": "string"
+        },
+        "git.build.host": {
+          "type": "string"
+        },
+        "git.build.time": {
+          "type": "string"
+        },
+        "git.build.user.email": {
+          "type": "string"
+        },
+        "git.build.user.name": {
+          "type": "string"
+        },
+        "git.build.version": {
+          "type": "string"
+        },
+        "git.closest.tag.commit.count": {
+          "type": "string"
+        },
+        "git.closest.tag.name": {
+          "type": "string"
+        },
+        "git.commit.id": {
+          "type": "string"
+        },
+        "git.commit.id.abbrev": {
+          "type": "string"
+        },
+        "git.commit.id.describe": {
+          "type": "string"
+        },
+        "git.commit.id.describe-short": {
+          "type": "string"
+        },
+        "git.commit.message.full": {
+          "type": "string"
+        },
+        "git.commit.message.short": {
+          "type": "string"
+        },
+        "git.commit.time": {
+          "type": "string"
+        },
+        "git.commit.user.email": {
+          "type": "string"
+        },
+        "git.commit.user.name": {
+          "type": "string"
+        },
+        "git.dirty": {
+          "type": "string"
+        },
+        "git.remote.origin.url": {
+          "type": "string"
+        },
+        "git.tags": {
+          "type": "string"
+        }
+      }
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "serviceDateFrom": {
+      "type": "string"
+    },
+    "serviceDateTo": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Reference",
+  "type": "object",
+  "properties": {
+    "agencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Agency"
+      }
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Route"
+      }
+    },
+    "situations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Situation"
+      }
+    },
+    "stopTimes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/StopTime"
+      }
+    },
+    "stops": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Stop"
+      }
+    },
+    "trips": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Trip"
+      }
+    }
+  },
+  "required": [
+    "agencies",
+    "routes",
+    "situations",
+    "stopTimes",
+    "stops",
+    "trips"
+  ]
+}

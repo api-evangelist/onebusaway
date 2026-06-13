@@ -1,0 +1,63 @@
+{
+  "operationId": "get_api_where_arrival-and-departure-for-stop_stopID.json",
+  "method": "GET",
+  "path": "/api/where/arrival-and-departure-for-stop/{stopID}.json",
+  "summary": "arrival-and-departure-for-stop",
+  "description": "",
+  "tags": [
+    "default"
+  ],
+  "parameters": [
+    {
+      "name": "stopID",
+      "in": "path",
+      "required": true,
+      "schema": {
+        "type": "string"
+      },
+      "example": "1_75403"
+    },
+    {
+      "name": "tripId",
+      "in": "query",
+      "required": true,
+      "schema": {
+        "type": "string"
+      },
+      "example": "1_604670535"
+    },
+    {
+      "name": "serviceDate",
+      "in": "query",
+      "required": true,
+      "schema": {
+        "type": "integer"
+      },
+      "example": 1710918000000
+    },
+    {
+      "name": "vehicleId",
+      "in": "query",
+      "schema": {
+        "type": "string"
+      },
+      "example": "1_6936"
+    },
+    {
+      "name": "stopSequence",
+      "in": "query",
+      "schema": {
+        "type": "integer"
+      },
+      "example": 39
+    },
+    {
+      "name": "time",
+      "in": "query",
+      "schema": {
+        "type": "integer"
+      },
+      "example": 1710979086000
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "operationId": "searchStop",
+  "method": "GET",
+  "path": "/api/where/search/stop.json",
+  "summary": "Search for a stop based on its name.",
+  "description": "",
+  "tags": [],
+  "parameters": [
+    {
+      "name": "input",
+      "in": "query",
+      "description": "The string to search for.",
+      "required": true,
+      "schema": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "maxCount",
+      "in": "query",
+      "description": "The max number of results to return. Defaults to 20.",
+      "required": false,
+      "schema": {
+        "type": "integer"
+      }
+    }
+  ]
+}

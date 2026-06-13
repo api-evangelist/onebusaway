@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StopRouteSchedule",
+  "type": "object",
+  "properties": {
+    "routeId": {
+      "type": "string"
+    },
+    "stopRouteDirectionSchedules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/StopRouteDirectionSchedule"
+      }
+    }
+  },
+  "required": [
+    "routeId",
+    "stopRouteDirectionSchedules"
+  ]
+}

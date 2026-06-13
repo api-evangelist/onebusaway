@@ -1,0 +1,78 @@
+{
+  "operationId": "get_api_where_trips-for-location.json",
+  "method": "GET",
+  "path": "/api/where/trips-for-location.json",
+  "summary": "Retrieve trips for a given location",
+  "description": "",
+  "tags": [],
+  "parameters": [
+    {
+      "name": "lat",
+      "in": "query",
+      "required": true,
+      "schema": {
+        "type": "number",
+        "format": "float"
+      },
+      "description": "The latitude coordinate of the search center"
+    },
+    {
+      "name": "lon",
+      "in": "query",
+      "required": true,
+      "schema": {
+        "type": "number",
+        "format": "float"
+      },
+      "description": "The longitude coordinate of the search center"
+    },
+    {
+      "name": "latSpan",
+      "in": "query",
+      "required": true,
+      "schema": {
+        "type": "number",
+        "format": "float"
+      },
+      "description": "Latitude span of the search bounding box"
+    },
+    {
+      "name": "lonSpan",
+      "in": "query",
+      "required": true,
+      "schema": {
+        "type": "number",
+        "format": "float"
+      },
+      "description": "Longitude span of the search bounding box"
+    },
+    {
+      "name": "includeTrip",
+      "in": "query",
+      "required": false,
+      "schema": {
+        "type": "boolean"
+      },
+      "description": "Whether to include full trip elements in the references section. Defaults to false."
+    },
+    {
+      "name": "includeSchedule",
+      "in": "query",
+      "required": false,
+      "schema": {
+        "type": "boolean"
+      },
+      "description": "Whether to include full schedule elements in the tripDetails section. Defaults to false."
+    },
+    {
+      "name": "time",
+      "in": "query",
+      "required": false,
+      "schema": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "description": "Specific time for the query. Defaults to the current time."
+    }
+  ]
+}

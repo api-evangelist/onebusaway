@@ -1,0 +1,22 @@
+{
+  "operationId": "get_api_where_routes-for-agency_agencyID.json",
+  "method": "GET",
+  "path": "/api/where/routes-for-agency/{agencyID}.json",
+  "summary": "Retrieve the list of all routes for a particular agency by id",
+  "description": "",
+  "tags": [
+    "default"
+  ],
+  "parameters": [
+    {
+      "name": "agencyID",
+      "in": "path",
+      "required": true,
+      "description": "The id of the agency",
+      "schema": {
+        "type": "string"
+      },
+      "example": "40"
+    }
+  ]
+}

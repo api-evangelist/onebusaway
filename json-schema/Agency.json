@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agency",
+  "type": "object",
+  "properties": {
+    "disclaimer": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "fareUrl": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "privateService": {
+      "type": "boolean"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "timezone",
+    "url"
+  ]
+}

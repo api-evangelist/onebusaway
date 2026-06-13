@@ -1,0 +1,8 @@
+{
+  "operationId": "get_api_where_trip_tripID.json",
+  "method": "GET",
+  "path": "/api/where/trip/{tripID}.json",
+  "summary": "Get details of a specific trip",
+  "description": "",
+  "tags": []
+}

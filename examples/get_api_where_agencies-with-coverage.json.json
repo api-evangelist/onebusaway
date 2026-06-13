@@ -1,0 +1,10 @@
+{
+  "operationId": "get_api_where_agencies-with-coverage.json",
+  "method": "GET",
+  "path": "/api/where/agencies-with-coverage.json",
+  "summary": "Returns a list of all transit agencies currently supported by OneBusAway along with the center of their coverage area.",
+  "description": "",
+  "tags": [
+    "default"
+  ]
+}
