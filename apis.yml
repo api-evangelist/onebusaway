@@ -74,7 +74,7 @@ apis:
         url: https://developer.onebusaway.org/api/where/elements
       - type: OpenAPI
         url: https://raw.githubusercontent.com/OneBusAway/sdk-config/main/openapi.yml
-      - type: SDK
+      - type: SDKs
         url: https://developer.onebusaway.org/api/sdk
       - type: GitHubRepository
         url: https://github.com/OneBusAway/sdk-config
@@ -92,7 +92,7 @@ common:
     url: https://developer.onebusaway.org/api/where/elements
   - type: GettingStarted
     url: https://developer.onebusaway.org/guides/api-webapp-configuration-guide
-  - type: SDK
+  - type: SDKs
     url: https://developer.onebusaway.org/api/sdk
   - type: GitHubOrganization
     url: https://github.com/OneBusAway
