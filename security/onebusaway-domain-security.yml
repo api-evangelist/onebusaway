@@ -1,0 +1,32 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: opentransitsoftwarefoundation.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 24 04:45:00 2026 GMT
+  hsts: false
+- host: developer.onebusaway.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 12 18:00:26 2026 GMT
+  hsts: false
+- host: api.pugetsound.onebusaway.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 15 23:59:59 2027 GMT
+  hsts: false
+domains:
+- domain: opentransitsoftwarefoundation.org
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: onebusaway.org
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

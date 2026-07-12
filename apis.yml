@@ -80,6 +80,10 @@ apis:
         url: https://github.com/OneBusAway/sdk-config
         name: OpenAPI + SDK Config
 common:
+  - type: DomainSecurity
+    url: security/onebusaway-domain-security.yml
+  - type: Authentication
+    url: authentication/onebusaway-authentication.yml
   - type: Website
     url: https://opentransitsoftwarefoundation.org/onebusaway/
   - type: Portal
