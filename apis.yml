@@ -80,6 +80,8 @@ apis:
         url: https://github.com/OneBusAway/sdk-config
         name: OpenAPI + SDK Config
 common:
+  - type: AgenticAccess
+    url: agentic-access/onebusaway-agentic-access.yml
   - type: DomainSecurity
     url: security/onebusaway-domain-security.yml
   - type: Authentication
