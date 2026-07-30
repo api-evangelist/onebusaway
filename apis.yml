@@ -14,9 +14,22 @@ description: >-
   Python, and Ruby, all generated from a shared OpenAPI 3.0 specification in
   the sdk-config repository.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: Open
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/onebusaway.png
 tags:
   - Transit
   - Public Transit
@@ -36,49 +49,46 @@ created: '2026-06-13'
 modified: '2026-06-13'
 specificationVersion: '0.20'
 apis:
-  - aid: onebusaway:onebusaway-rest-api
-    name: OneBusAway REST API
-    description: >-
-      RESTful web service providing real-time and scheduled transit data for
-      agencies running the OneBusAway platform. Endpoints cover agencies with
-      coverage, individual agency details, routes, stops, trips, real-time
-      arrivals and departures, active vehicle positions, schedule information
-      for stops and routes, shape/polyline data, block configuration, search
-      for stops and routes by location or name, and user-submitted problem
-      reports. Authentication is an API key supplied as the "key" query
-      parameter. Responses are available in both JSON and XML; JSON responses
-      support an optional JSONP callback parameter. The reference server is
-      the Puget Sound deployment at api.pugetsound.onebusaway.org; transit
-      agencies can self-host using the open-source application modules.
-    humanURL: https://developer.onebusaway.org/api/where
-    baseURL: https://api.pugetsound.onebusaway.org
-    tags:
-      - Transit
-      - Real-Time
-      - Arrivals
-      - Departures
-      - Stops
-      - Routes
-      - Trips
-      - Agencies
-      - Vehicle Positions
-      - Service Alerts
-      - Schedule
-      - GTFS
-    properties:
-      - type: Documentation
-        url: https://developer.onebusaway.org/api/where
-      - type: Documentation
-        url: https://developer.onebusaway.org/api/where/methods
-      - type: Documentation
-        url: https://developer.onebusaway.org/api/where/elements
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/OneBusAway/sdk-config/main/openapi.yml
-      - type: SDKs
-        url: https://developer.onebusaway.org/api/sdk
-      - type: GitHubRepository
-        url: https://github.com/OneBusAway/sdk-config
-        name: OpenAPI + SDK Config
+- aid: onebusaway:onebusaway-default-api
+  name: OneBusAway default API
+  description: The default API from OneBusAway — 13 operation(s) for default.
+  humanURL: https://developer.onebusaway.org/api/where
+  baseURL: https://api.pugetsound.onebusaway.org
+  tags:
+  - default
+  properties:
+  - type: OpenAPI
+    url: openapi/onebusaway-default-api-openapi.yml
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where/methods
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where/elements
+  - type: SDKs
+    url: https://developer.onebusaway.org/api/sdk
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/sdk-config
+- aid: onebusaway:onebusaway-where-api
+  name: OneBusAway Where API
+  description: The Where API from OneBusAway — 17 operation(s) for where.
+  humanURL: https://developer.onebusaway.org/api/where
+  baseURL: https://api.pugetsound.onebusaway.org
+  tags:
+  - Where
+  properties:
+  - type: OpenAPI
+    url: openapi/onebusaway-where-api-openapi.yml
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where/methods
+  - type: Documentation
+    url: https://developer.onebusaway.org/api/where/elements
+  - type: SDKs
+    url: https://developer.onebusaway.org/api/sdk
+  - type: GitHubRepository
+    url: https://github.com/OneBusAway/sdk-config
 common:
   - type: AgenticAccess
     url: agentic-access/onebusaway-agentic-access.yml
