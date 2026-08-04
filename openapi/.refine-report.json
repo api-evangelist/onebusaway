@@ -1,0 +1,16 @@
+{
+  "provider": "onebusaway",
+  "sources": [
+    "onebusaway-default-api-openapi.yml",
+    "onebusaway-where-api-openapi.yml"
+  ],
+  "outputs": [
+    "onebusaway-default-api-openapi.yml",
+    "onebusaway-where-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
