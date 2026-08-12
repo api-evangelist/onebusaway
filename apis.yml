@@ -90,6 +90,9 @@ apis:
   - type: GitHubRepository
     url: https://github.com/OneBusAway/sdk-config
 common:
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/OneBusAway/sdk-config/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/onebusaway-agentic-access.yml
   - type: DomainSecurity
