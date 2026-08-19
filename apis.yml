@@ -47,7 +47,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/onebusaway/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: onebusaway:onebusaway-default-api
   name: OneBusAway default API
