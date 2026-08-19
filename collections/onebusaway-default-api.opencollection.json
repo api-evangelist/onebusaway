@@ -1,0 +1,480 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OneBusAway default API",
+    "version": "0.0.2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "default",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a list of all transit agencies currently supported by OneBusAway along with the center of their coverage area.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/agencies-with-coverage.json"
+          },
+          "docs": "Returns a list of all transit agencies currently supported by OneBusAway along with the center of their coverage area."
+        },
+        {
+          "info": {
+            "name": "Retrieve the full schedule for a route on a particular day",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/schedule-for-route/:routeID.json",
+            "params": [
+              {
+                "name": "routeID",
+                "value": "1_100223",
+                "type": "path",
+                "description": "The route id to request the schedule for"
+              },
+              {
+                "name": "date",
+                "value": "2024-08-12",
+                "type": "query",
+                "description": "The date for which you want to request a schedule in the format YYYY-MM-DD (optional, defaults to current date)"
+              }
+            ]
+          },
+          "docs": "Retrieve the full schedule for a route on a particular day"
+        },
+        {
+          "info": {
+            "name": "routes-for-location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/routes-for-location.json",
+            "params": [
+              {
+                "name": "lat",
+                "value": "47.653435",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "-122.305641",
+                "type": "query"
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latSpan",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lonSpan",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "routes-for-location"
+        },
+        {
+          "info": {
+            "name": "Retrieve the list of all routes for a particular agency by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/routes-for-agency/:agencyID.json",
+            "params": [
+              {
+                "name": "agencyID",
+                "value": "40",
+                "type": "path",
+                "description": "The id of the agency"
+              }
+            ]
+          },
+          "docs": "Retrieve the list of all routes for a particular agency by id"
+        },
+        {
+          "info": {
+            "name": "config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/config.json"
+          },
+          "docs": "config"
+        },
+        {
+          "info": {
+            "name": "current-time",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/current-time.json"
+          },
+          "docs": "current-time"
+        },
+        {
+          "info": {
+            "name": "stops-for-location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/stops-for-location.json",
+            "params": [
+              {
+                "name": "lat",
+                "value": "47.656422",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "-122.305641",
+                "type": "query"
+              },
+              {
+                "name": "radius",
+                "value": "1000",
+                "type": "query",
+                "description": "The radius in meters to search within"
+              },
+              {
+                "name": "latSpan",
+                "value": "0.01",
+                "type": "query",
+                "description": "An alternative to radius to set the search bounding box (optional)"
+              },
+              {
+                "name": "lonSpan",
+                "value": "0.01",
+                "type": "query",
+                "description": "An alternative to radius to set the search bounding box (optional)"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "A search query string to filter the results"
+              }
+            ]
+          },
+          "docs": "stops-for-location"
+        },
+        {
+          "info": {
+            "name": "arrival-and-departure-for-stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/arrival-and-departure-for-stop/:stopID.json",
+            "params": [
+              {
+                "name": "stopID",
+                "value": "1_75403",
+                "type": "path"
+              },
+              {
+                "name": "tripId",
+                "value": "1_604670535",
+                "type": "query"
+              },
+              {
+                "name": "serviceDate",
+                "value": "1710918000000",
+                "type": "query"
+              },
+              {
+                "name": "vehicleId",
+                "value": "1_6936",
+                "type": "query"
+              },
+              {
+                "name": "stopSequence",
+                "value": "39",
+                "type": "query"
+              },
+              {
+                "name": "time",
+                "value": "1710979086000",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "arrival-and-departure-for-stop"
+        },
+        {
+          "info": {
+            "name": "arrivals-and-departures-for-stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-stop/:stopID.json",
+            "params": [
+              {
+                "name": "stopID",
+                "value": "1_75403",
+                "type": "path"
+              },
+              {
+                "name": "minutesBefore",
+                "value": "",
+                "type": "query",
+                "description": "Include vehicles having arrived or departed in the previous n minutes."
+              },
+              {
+                "name": "minutesAfter",
+                "value": "",
+                "type": "query",
+                "description": "Include vehicles arriving or departing in the next n minutes."
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "The specific time for querying the system status."
+              }
+            ]
+          },
+          "docs": "arrivals-and-departures-for-stop"
+        },
+        {
+          "info": {
+            "name": "arrivals-and-departures-for-location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/arrivals-and-departures-for-location.json",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query",
+                "description": "The latitude coordinate of the search center."
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query",
+                "description": "The longitude coordinate of the search center."
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query",
+                "description": "The search radius in meters."
+              },
+              {
+                "name": "latSpan",
+                "value": "",
+                "type": "query",
+                "description": "Sets the latitude limits of the search bounding box."
+              },
+              {
+                "name": "lonSpan",
+                "value": "",
+                "type": "query",
+                "description": "Sets the longitude limits of the search bounding box."
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "By default, returns the status right now. Can be queried at a specific time (milliseconds since epoch) for testing."
+              },
+              {
+                "name": "minutesBefore",
+                "value": "",
+                "type": "query",
+                "description": "Include arrivals and departures this many minutes before the query time."
+              },
+              {
+                "name": "minutesAfter",
+                "value": "",
+                "type": "query",
+                "description": "Include arrivals and departures this many minutes after the query time."
+              },
+              {
+                "name": "maxCount",
+                "value": "",
+                "type": "query",
+                "description": "The max size of the list of nearby stops and arrivals to return. Defaults to 250, max 1000."
+              },
+              {
+                "name": "routeType",
+                "value": "",
+                "type": "query",
+                "description": "Optional list of GTFS routeTypes to filter by (comma delimited) e.g. \"1,2,3\"."
+              },
+              {
+                "name": "emptyReturnsNotFound",
+                "value": "",
+                "type": "query",
+                "description": "If true, returns a 404 Not Found error instead of an empty result."
+              }
+            ]
+          },
+          "docs": "Returns real-time arrival and departure data for stops within a bounding box or radius centered on a specific location."
+        },
+        {
+          "info": {
+            "name": "Search for active trips for a specific route.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/trips-for-route/:routeID.json",
+            "params": [
+              {
+                "name": "routeID",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the route."
+              },
+              {
+                "name": "includeStatus",
+                "value": "",
+                "type": "query",
+                "description": "Determine whether full tripStatus elements with real-time information are included. Defaults to false."
+              },
+              {
+                "name": "includeSchedule",
+                "value": "",
+                "type": "query",
+                "description": "Determine whether full schedule elements are included. Defaults to false."
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "Query the system at a specific time. Useful for testing."
+              }
+            ]
+          },
+          "docs": "Search for active trips for a specific route."
+        },
+        {
+          "info": {
+            "name": "Retrieve Trip Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/trip-details/:tripID.json",
+            "params": [
+              {
+                "name": "tripID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the trip to retrieve details for."
+              },
+              {
+                "name": "serviceDate",
+                "value": "",
+                "type": "query",
+                "description": "Service date for the trip as Unix time in milliseconds (optional)."
+              },
+              {
+                "name": "includeTrip",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include the full trip element in the references section (defaults to true)."
+              },
+              {
+                "name": "includeSchedule",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include the full schedule element in the tripDetails section (defaults to true)."
+              },
+              {
+                "name": "includeStatus",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include the full status element in the tripDetails section (defaults to true)."
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "Time parameter to query the system at a specific time (optional)."
+              }
+            ]
+          },
+          "docs": "Retrieve Trip Details"
+        },
+        {
+          "info": {
+            "name": "Retrieve trip for a specific vehicle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/trip-for-vehicle/:vehicleID.json",
+            "params": [
+              {
+                "name": "vehicleID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the vehicle to retrieve trip details for."
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "Time parameter to query the system at a specific time (optional)."
+              },
+              {
+                "name": "includeTrip",
+                "value": "",
+                "type": "query",
+                "description": "Determines whether full <trip/> element is included in the <references/> section. Defaults to false."
+              },
+              {
+                "name": "includeSchedule",
+                "value": "",
+                "type": "query",
+                "description": "Determines whether full <schedule/> element is included in the <tripDetails/> section. Defaults to false."
+              },
+              {
+                "name": "includeStatus",
+                "value": "",
+                "type": "query",
+                "description": "Determines whether the full <status/> element is included in the <tripDetails/> section. Defaults to true."
+              }
+            ]
+          },
+          "docs": "Retrieve trip for a specific vehicle"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

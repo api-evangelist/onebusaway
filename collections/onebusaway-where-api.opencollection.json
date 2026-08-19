@@ -1,0 +1,510 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OneBusAway default Where API",
+    "version": "0.0.2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Where",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve info for a specific transit agency identified by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/agency/:agencyID.json",
+            "params": [
+              {
+                "name": "agencyID",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the transit agency."
+              }
+            ]
+          },
+          "docs": "Retrieve information for a specific transit agency identified by its unique ID."
+        },
+        {
+          "info": {
+            "name": "Retrieve info for a specific route identified by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/route/:routeID.json",
+            "params": [
+              {
+                "name": "routeID",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the route."
+              }
+            ]
+          },
+          "docs": "Retrieve information for a specific route identified by its unique ID."
+        },
+        {
+          "info": {
+            "name": "Get route IDs for a specific agency",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/route-ids-for-agency/:agencyID.json",
+            "params": [
+              {
+                "name": "agencyID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the agency"
+              }
+            ]
+          },
+          "docs": "Get route IDs for a specific agency"
+        },
+        {
+          "info": {
+            "name": "Get vehicles for a specific agency",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/vehicles-for-agency/:agencyID.json",
+            "params": [
+              {
+                "name": "agencyID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the agency"
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get vehicles for a specific agency"
+        },
+        {
+          "info": {
+            "name": "Get details of a specific trip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/trip/:tripID.json",
+            "params": [
+              {
+                "name": "tripID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the trip"
+              }
+            ]
+          },
+          "docs": "Get details of a specific trip"
+        },
+        {
+          "info": {
+            "name": "Retrieve trips for a given location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/trips-for-location.json",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query",
+                "description": "The latitude coordinate of the search center"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query",
+                "description": "The longitude coordinate of the search center"
+              },
+              {
+                "name": "latSpan",
+                "value": "",
+                "type": "query",
+                "description": "Latitude span of the search bounding box"
+              },
+              {
+                "name": "lonSpan",
+                "value": "",
+                "type": "query",
+                "description": "Longitude span of the search bounding box"
+              },
+              {
+                "name": "includeTrip",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include full trip elements in the references section. Defaults to false."
+              },
+              {
+                "name": "includeSchedule",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include full schedule elements in the tripDetails section. Defaults to false."
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "Specific time for the query. Defaults to the current time."
+              }
+            ]
+          },
+          "docs": "Retrieve trips for a given location"
+        },
+        {
+          "info": {
+            "name": "Get stops for a specific route",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/stops-for-route/:routeID.json",
+            "params": [
+              {
+                "name": "routeID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the route"
+              },
+              {
+                "name": "includePolylines",
+                "value": "",
+                "type": "query",
+                "description": "Include polyline elements in the response (default true)"
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query",
+                "description": "Specify service date (YYYY-MM-DD or epoch) (default today)"
+              }
+            ]
+          },
+          "docs": "Get stops for a specific route"
+        },
+        {
+          "info": {
+            "name": "Get stops for a specific agency",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/stops-for-agency/:agencyID.json",
+            "params": [
+              {
+                "name": "agencyID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the agency"
+              }
+            ]
+          },
+          "docs": "Get stops for a specific agency"
+        },
+        {
+          "info": {
+            "name": "Get details of a specific stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/stop/:stopID.json",
+            "params": [
+              {
+                "name": "stopID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the stop"
+              }
+            ]
+          },
+          "docs": "Get details of a specific stop"
+        },
+        {
+          "info": {
+            "name": "Get schedule for a specific stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/schedule-for-stop/:stopID.json",
+            "params": [
+              {
+                "name": "stopID",
+                "value": "",
+                "type": "path",
+                "description": "The stop id to request the schedule for, encoded directly in the URL"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "query",
+                "description": "The date for which you want to request a schedule in the format YYYY-MM-DD (optional, defaults to the current date)"
+              }
+            ]
+          },
+          "docs": "Get schedule for a specific stop"
+        },
+        {
+          "info": {
+            "name": "Get stop IDs for a specific agency",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/stop-ids-for-agency/:agencyID.json",
+            "params": [
+              {
+                "name": "agencyID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the agency"
+              }
+            ]
+          },
+          "docs": "Get stop IDs for a specific agency"
+        },
+        {
+          "info": {
+            "name": "Submit a user-generated problem report for a stop",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/report-problem-with-stop/:stopID.json",
+            "params": [
+              {
+                "name": "stopID",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the stop"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "A string code identifying the nature of the problem"
+              },
+              {
+                "name": "userComment",
+                "value": "",
+                "type": "query",
+                "description": "Additional comment text supplied by the user describing the problem"
+              },
+              {
+                "name": "userLat",
+                "value": "",
+                "type": "query",
+                "description": "The reporting user’s current latitude"
+              },
+              {
+                "name": "userLon",
+                "value": "",
+                "type": "query",
+                "description": "The reporting user’s current longitude"
+              },
+              {
+                "name": "userLocationAccuracy",
+                "value": "",
+                "type": "query",
+                "description": "The reporting user’s location accuracy, in meters"
+              }
+            ]
+          },
+          "docs": "Submit a user-generated problem report for a stop"
+        },
+        {
+          "info": {
+            "name": "Submit a user-generated problem report for a particular trip.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/report-problem-with-trip/:tripID.json",
+            "params": [
+              {
+                "name": "tripID",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the trip"
+              },
+              {
+                "name": "serviceDate",
+                "value": "",
+                "type": "query",
+                "description": "The service date of the trip"
+              },
+              {
+                "name": "vehicleID",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle actively serving the trip"
+              },
+              {
+                "name": "stopID",
+                "value": "",
+                "type": "query",
+                "description": "A stop ID indicating where the user is experiencing the problem"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "A string code identifying the nature of the problem"
+              },
+              {
+                "name": "userComment",
+                "value": "",
+                "type": "query",
+                "description": "Additional comment text supplied by the user describing the problem"
+              },
+              {
+                "name": "userOnVehicle",
+                "value": "",
+                "type": "query",
+                "description": "Indicator if the user is on the transit vehicle experiencing the problem"
+              },
+              {
+                "name": "userVehicleNumber",
+                "value": "",
+                "type": "query",
+                "description": "The vehicle number, as reported by the user"
+              },
+              {
+                "name": "userLat",
+                "value": "",
+                "type": "query",
+                "description": "The reporting user’s current latitude"
+              },
+              {
+                "name": "userLon",
+                "value": "",
+                "type": "query",
+                "description": "The reporting user’s current longitude"
+              },
+              {
+                "name": "userLocationAccuracy",
+                "value": "",
+                "type": "query",
+                "description": "The reporting user’s location accuracy, in meters"
+              }
+            ]
+          },
+          "docs": "Submit a user-generated problem report for a particular trip."
+        },
+        {
+          "info": {
+            "name": "Search for a stop based on its name.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/search/stop.json",
+            "params": [
+              {
+                "name": "input",
+                "value": "",
+                "type": "query",
+                "description": "The string to search for."
+              },
+              {
+                "name": "maxCount",
+                "value": "",
+                "type": "query",
+                "description": "The max number of results to return. Defaults to 20."
+              }
+            ]
+          },
+          "docs": "Search for a stop based on its name."
+        },
+        {
+          "info": {
+            "name": "Search for a route based on its name.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/search/route.json",
+            "params": [
+              {
+                "name": "input",
+                "value": "",
+                "type": "query",
+                "description": "The string to search for."
+              },
+              {
+                "name": "maxCount",
+                "value": "",
+                "type": "query",
+                "description": "The max number of results to return. Defaults to 20."
+              }
+            ]
+          },
+          "docs": "Search for a route based on its name."
+        },
+        {
+          "info": {
+            "name": "Get details of a specific block by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/block/:blockID.json",
+            "params": [
+              {
+                "name": "blockID",
+                "value": "",
+                "type": "path",
+                "description": "ID of the block"
+              }
+            ]
+          },
+          "docs": "Get details of a specific block by ID"
+        },
+        {
+          "info": {
+            "name": "Retrieve a shape by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pugetsound.onebusaway.org/api/where/shape/:shapeID.json",
+            "params": [
+              {
+                "name": "shapeID",
+                "value": "",
+                "type": "path",
+                "description": "The shape ID, encoded directly in the URL"
+              }
+            ]
+          },
+          "docs": "Retrieve a shape (the path traveled by a transit vehicle) by ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
