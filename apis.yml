@@ -38,6 +38,20 @@ tags:
   - Departures
   - Bus
   - GTFS
+  - Open-Source
+  - Stop Data
+  - Trip Planning
+  - Service Alerts
+  - Vehicle Positions
+  - Open Data
+tags_raw:
+  - Transit
+  - Public Transit
+  - Real-Time
+  - Arrivals
+  - Departures
+  - Bus
+  - GTFS
   - Open Source
   - Stop Data
   - Trip Planning
@@ -54,7 +68,8 @@ apis:
   description: The default API from OneBusAway — 13 operation(s) for default.
   humanURL: https://developer.onebusaway.org/api/where
   baseURL: https://api.pugetsound.onebusaway.org
-  tags:
+  tags: []
+  tags_raw:
   - default
   properties:
   - type: OpenAPI
