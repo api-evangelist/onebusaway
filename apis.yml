@@ -14,6 +14,19 @@ description: >-
   Python, and Ruby, all generated from a shared OpenAPI 3.0 specification in
   the sdk-config repository.
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: Apache-2.0
+  open_source: true
+  commercial: false
+  callable_host: true
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
@@ -105,6 +118,8 @@ apis:
   - type: GitHubRepository
     url: https://github.com/OneBusAway/sdk-config
 common:
+  - type: IssueTracker
+    url: https://github.com/OneBusAway/sdk-config/issues
   - type: License
     name: Apache-2.0
     url: https://github.com/OneBusAway/sdk-config/blob/main/LICENSE
