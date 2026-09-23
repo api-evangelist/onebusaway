@@ -1,16 +1,41 @@
 {
   "provider": "onebusaway",
   "sources": [
-    "onebusaway-default-api-openapi.yml",
-    "onebusaway-where-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
-    "onebusaway-default-api-openapi.yml",
-    "onebusaway-where-api-openapi.yml"
+    "onebusaway-where-api-openapi.yml",
+    "onebusaway-default-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "openapi.yml: tagged paths GET /api/where/agency/{agencyID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/route/{routeID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/route-ids-for-agency/{agencyID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/vehicles-for-agency/{agencyID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/trip/{tripID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/trips-for-location.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/stops-for-route/{routeID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/stops-for-agency/{agencyID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/stop/{stopID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/schedule-for-stop/{stopID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/stop-ids-for-agency/{agencyID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/report-problem-with-stop/{stopID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/report-problem-with-trip/{tripID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/search/stop.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/search/route.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/block/{blockID}.json -> Where",
+    "openapi.yml: tagged paths GET /api/where/shape/{shapeID}.json -> Where",
+    "openapi.yml: declared missing tag: Where",
+    "openapi.yml: declared missing tag: default",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "onebusaway-default-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "onebusaway-where-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

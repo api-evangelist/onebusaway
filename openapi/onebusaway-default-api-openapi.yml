@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  title: OneBusAway default API
+  title: OneBusAway Default API
   description: The OneBusAway REST API. For use with servers like https://api.pugetsound.onebusaway.org
   version: 0.0.2
 servers:
@@ -8,13 +8,13 @@ servers:
 security:
 - ApiKeyAuth: []
 tags:
-- name: default
+- name: Default
 paths:
   /api/where/agencies-with-coverage.json:
     get:
       tags:
-      - default
-      summary: Returns a list of all transit agencies currently supported by OneBusAway along with the center of their coverage area.
+      - Default
+      summary: Returns a list of all transit agencies currently supported by OneBusAway along…
       responses:
         '200':
           description: Successful response
@@ -29,10 +29,12 @@ paths:
                       $ref: '#/components/schemas/CoverageResponse'
                   required:
                   - data
+      operationId: getApiWhereAgenciesWithCoverageJson
+      x-operation-id-source: derived
   /api/where/schedule-for-route/{routeID}.json:
     get:
       tags:
-      - default
+      - Default
       summary: Retrieve the full schedule for a route on a particular day
       parameters:
       - name: routeID
@@ -65,10 +67,12 @@ paths:
                   - data
         '404':
           $ref: '#/components/responses/NotFound'
+      operationId: getApiWhereScheduleForRoute{routeID}Json
+      x-operation-id-source: derived
   /api/where/routes-for-location.json:
     get:
       tags:
-      - default
+      - Default
       summary: routes-for-location
       parameters:
       - name: lat
@@ -117,10 +121,12 @@ paths:
                       $ref: '#/components/schemas/RoutesForLocationResponse'
                   required:
                   - data
+      operationId: getApiWhereRoutesForLocationJson
+      x-operation-id-source: derived
   /api/where/routes-for-agency/{agencyID}.json:
     get:
       tags:
-      - default
+      - Default
       summary: Retrieve the list of all routes for a particular agency by id
       parameters:
       - name: agencyID
@@ -144,10 +150,12 @@ paths:
                       $ref: '#/components/schemas/RoutesForAgencyResponse'
                   required:
                   - data
+      operationId: getApiWhereRoutesForAgency{agencyID}Json
+      x-operation-id-source: derived
   /api/where/config.json:
     get:
       tags:
-      - default
+      - Default
       summary: config
       responses:
         '200':
@@ -163,10 +171,12 @@ paths:
                       $ref: '#/components/schemas/ConfigResponse'
                   required:
                   - data
+      operationId: getApiWhereConfigJson
+      x-operation-id-source: derived
   /api/where/current-time.json:
     get:
       tags:
-      - default
+      - Default
       summary: current-time
       responses:
         '200':
@@ -182,10 +192,12 @@ paths:
                       $ref: '#/components/schemas/CurrentTimeResponse'
                   required:
                   - data
+      operationId: getApiWhereCurrentTimeJson
+      x-operation-id-source: derived
   /api/where/stops-for-location.json:
     get:
       tags:
-      - default
+      - Default
       summary: stops-for-location
       parameters:
       - name: lat
@@ -241,10 +253,12 @@ paths:
                       $ref: '#/components/schemas/StopsForLocationResponse'
                   required:
                   - data
+      operationId: getApiWhereStopsForLocationJson
+      x-operation-id-source: derived
   /api/where/arrival-and-departure-for-stop/{stopID}.json:
     get:
       tags:
-      - default
+      - Default
       summary: arrival-and-departure-for-stop
       parameters:
       - name: stopID
@@ -294,10 +308,12 @@ paths:
                       $ref: '#/components/schemas/ArrivalDepartureForStopResponse'
                   required:
                   - data
+      operationId: getApiWhereArrivalAndDepartureForStop{stopID}Json
+      x-operation-id-source: derived
   /api/where/arrivals-and-departures-for-stop/{stopID}.json:
     get:
       tags:
-      - default
+      - Default
       summary: arrivals-and-departures-for-stop
       parameters:
       - name: stopID
@@ -341,10 +357,12 @@ paths:
                       $ref: '#/components/schemas/ArrivalsDeparturesForStopResponse'
                   required:
                   - data
+      operationId: getApiWhereArrivalsAndDeparturesForStop{stopID}Json
+      x-operation-id-source: derived
   /api/where/arrivals-and-departures-for-location.json:
     get:
       tags:
-      - default
+      - Default
       summary: arrivals-and-departures-for-location
       description: Returns real-time arrival and departure data for stops within a bounding box or radius centered on a specific location.
       operationId: getArrivalsAndDeparturesForLocation
@@ -442,8 +460,8 @@ paths:
   /api/where/trips-for-route/{routeID}.json:
     get:
       tags:
-      - default
-      summary: Search for active trips for a specific route.
+      - Default
+      summary: Search for active trips for a specific route
       parameters:
       - name: routeID
         in: path
@@ -496,10 +514,12 @@ paths:
                       - references
                   required:
                   - data
+      operationId: getApiWhereTripsForRoute{routeID}Json
+      x-operation-id-source: derived
   /api/where/trip-details/{tripID}.json:
     get:
       tags:
-      - default
+      - Default
       summary: Retrieve Trip Details
       parameters:
       - in: path
@@ -554,10 +574,12 @@ paths:
                       $ref: '#/components/schemas/TripDetailsResponse'
                   required:
                   - data
+      operationId: getApiWhereTripDetails{tripID}Json
+      x-operation-id-source: derived
   /api/where/trip-for-vehicle/{vehicleID}.json:
     get:
       tags:
-      - default
+      - Default
       summary: Retrieve trip for a specific vehicle
       parameters:
       - in: path
@@ -601,28 +623,162 @@ paths:
                       $ref: '#/components/schemas/TripVehicleResponse'
                   required:
                   - data
+      operationId: getApiWhereTripForVehicle{vehicleID}Json
+      x-operation-id-source: derived
 components:
   schemas:
-    TripEntry:
+    CurrentTimeResponse:
+      type: object
+      properties:
+        entry:
+          $ref: '#/components/schemas/CurrentTime'
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - entry
+      - references
+    TripDetails:
       type: object
       properties:
         frequency:
-          type: string
-          nullable: true
-        schedule:
-          $ref: '#/components/schemas/TripSchedule'
+          type:
+          - string
+          - 'null'
         serviceDate:
           type: integer
+          format: int64
         situationIds:
           type: array
           items:
             type: string
-        status:
-          $ref: '#/components/schemas/TripStatus'
         tripId:
           type: string
+        schedule:
+          $ref: '#/components/schemas/TripSchedule'
+        status:
+          $ref: '#/components/schemas/TripStatus'
       required:
       - tripId
+      - schedule
+      - status
+    Trip:
+      type: object
+      properties:
+        blockId:
+          type: string
+        directionId:
+          type: string
+        id:
+          type: string
+        peakOffpeak:
+          type: integer
+        routeId:
+          type: string
+        routeShortName:
+          type: string
+        serviceId:
+          type: string
+        shapeId:
+          type: string
+        timeZone:
+          type: string
+        tripHeadsign:
+          type: string
+        tripShortName:
+          type: string
+      required:
+      - id
+      - routeId
+      - serviceId
+    Config:
+      type: object
+      properties:
+        gitProperties:
+          type: object
+          properties:
+            git.branch:
+              type: string
+            git.build.host:
+              type: string
+            git.build.time:
+              type: string
+            git.build.user.email:
+              type: string
+            git.build.user.name:
+              type: string
+            git.build.version:
+              type: string
+            git.closest.tag.commit.count:
+              type: string
+            git.closest.tag.name:
+              type: string
+            git.commit.id:
+              type: string
+            git.commit.id.abbrev:
+              type: string
+            git.commit.id.describe:
+              type: string
+            git.commit.id.describe-short:
+              type: string
+            git.commit.message.full:
+              type: string
+            git.commit.message.short:
+              type: string
+            git.commit.time:
+              type: string
+            git.commit.user.email:
+              type: string
+            git.commit.user.name:
+              type: string
+            git.dirty:
+              type: string
+            git.remote.origin.url:
+              type: string
+            git.tags:
+              type: string
+        id:
+          type: string
+        name:
+          type: string
+        serviceDateFrom:
+          type: string
+        serviceDateTo:
+          type: string
+    Agency:
+      type: object
+      properties:
+        disclaimer:
+          type: string
+        email:
+          type: string
+        fareUrl:
+          type: string
+        id:
+          type: string
+        lang:
+          type: string
+        name:
+          type: string
+        phone:
+          type: string
+        privateService:
+          type: boolean
+        timezone:
+          type: string
+        url:
+          type: string
+      required:
+      - id
+      - name
+      - timezone
+      - url
+    ScheduleForRouteResponse:
+      type: object
+      properties:
+        entry:
+          $ref: '#/components/schemas/ScheduleEntry'
+      required:
+      - entry
     ArrivalDepartureForStopResponse:
       type: object
       properties:
@@ -633,112 +789,32 @@ components:
       required:
       - entry
       - references
-    TripVehicleResponse:
+    StopTripGrouping:
       type: object
       properties:
-        entry:
-          $ref: '#/components/schemas/TripEntry'
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - entry
-      - references
-    TimeWindow:
-      type: object
-      properties:
-        from:
-          type: integer
-          format: int64
-          description: Start time of the time window as a Unix timestamp.
-        to:
-          type: integer
-          format: int64
-          description: End time of the time window as a Unix timestamp.
-      required:
-      - from
-      - to
-    StopTime:
-      type: object
-      properties:
-        arrivalTime:
-          type: integer
-        departureTime:
-          type: integer
-        distanceAlongTrip:
-          type: number
-        historicalOccupancy:
+        directionId:
           type: string
-        stopHeadsign:
-          type: string
-        stopId:
-          type: string
-    ResponseWrapper:
-      type: object
-      properties:
-        code:
-          type: integer
-        currentTime:
-          type: integer
-        text:
-          type: string
-        version:
-          type: integer
+        stopIds:
+          type: array
+          items:
+            type: string
+        tripHeadsigns:
+          type: array
+          items:
+            type: string
+        tripIds:
+          type: array
+          items:
+            type: string
+        tripsWithStopTimes:
+          type: array
+          items:
+            $ref: '#/components/schemas/TripWithStopTimes'
       required:
-      - code
-      - currentTime
-      - text
-      - version
-    Reference:
-      type: object
-      properties:
-        agencies:
-          type: array
-          items:
-            $ref: '#/components/schemas/Agency'
-        routes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Route'
-        situations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Situation'
-        stopTimes:
-          type: array
-          items:
-            $ref: '#/components/schemas/StopTime'
-        stops:
-          type: array
-          items:
-            $ref: '#/components/schemas/Stop'
-        trips:
-          type: array
-          items:
-            $ref: '#/components/schemas/Trip'
-      required:
-      - agencies
-      - routes
-      - situations
-      - stopTimes
-      - stops
-      - trips
-    ConfigResponse:
-      type: object
-      properties:
-        entry:
-          $ref: '#/components/schemas/Config'
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - entry
-      - references
-    CurrentTime:
-      type: object
-      properties:
-        readableTime:
-          type: string
-        time:
-          type: integer
+      - directionId
+      - stopIds
+      - tripHeadsigns
+      - tripIds
     DetailedScheduleStopTime:
       type: object
       properties:
@@ -765,25 +841,240 @@ components:
       - departureTime
       - stopId
       - tripId
-    Coverage:
+    ArrivalsDeparturesForStopResponse:
       type: object
       properties:
-        agencyId:
-          type: string
-        lat:
-          type: number
-        latSpan:
-          type: number
-        lon:
-          type: number
-        lonSpan:
-          type: number
+        entry:
+          type: object
+          properties:
+            arrivalsAndDepartures:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArrivalDepartureForStop'
+          required:
+          - arrivalsAndDepartures
+        references:
+          $ref: '#/components/schemas/Reference'
       required:
-      - agencyId
-      - lat
-      - latSpan
-      - lon
-      - lonSpan
+      - entry
+      - references
+    ConfigResponse:
+      type: object
+      properties:
+        entry:
+          $ref: '#/components/schemas/Config'
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - entry
+      - references
+    ResponseWrapper:
+      type: object
+      properties:
+        code:
+          type: integer
+        currentTime:
+          type: integer
+        text:
+          type: string
+        version:
+          type: integer
+      required:
+      - code
+      - currentTime
+      - text
+      - version
+    TripWithStopTimes:
+      type: object
+      properties:
+        tripId:
+          type: string
+        stopTimes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DetailedScheduleStopTime'
+      required:
+      - tripId
+      - stopTimes
+    ArrivalDepartureForStop:
+      type: object
+      properties:
+        actualTrack:
+          type: string
+          description: The actual track information of the arriving transit vehicle.
+        arrivalEnabled:
+          type: boolean
+          description: Indicates if riders can arrive on this transit vehicle.
+        blockTripSequence:
+          type: integer
+          description: Index of this arrival’s trip into the sequence of trips for the active block.
+        departureEnabled:
+          type: boolean
+          description: Indicates if riders can depart from this transit vehicle.
+        distanceFromStop:
+          type: number
+          description: Distance of the arriving transit vehicle from the stop, in meters.
+        frequency:
+          type:
+          - string
+          - 'null'
+          description: Information about frequency-based scheduling, if applicable to the trip.
+        historicalOccupancy:
+          type: string
+          description: Historical occupancy information of the transit vehicle.
+        lastUpdateTime:
+          type: integer
+          description: Timestamp of the last update time for this arrival.
+        numberOfStopsAway:
+          type: integer
+          description: Number of stops between the arriving transit vehicle and the current stop (excluding the current stop).
+        occupancyStatus:
+          type: string
+          description: Current occupancy status of the transit vehicle.
+        predicted:
+          type: boolean
+          description: Indicates if real-time arrival info is available for this trip.
+        predictedArrivalInterval:
+          type:
+          - string
+          - 'null'
+          description: Interval for predicted arrival time, if available.
+        predictedArrivalTime:
+          type: integer
+          description: Predicted arrival time, in milliseconds since Unix epoch (zero if no real-time available).
+        predictedDepartureInterval:
+          type:
+          - string
+          - 'null'
+          description: Interval for predicted departure time, if available.
+        predictedDepartureTime:
+          type: integer
+          description: Predicted departure time, in milliseconds since Unix epoch (zero if no real-time available).
+        predictedOccupancy:
+          type: string
+          description: Predicted occupancy status of the transit vehicle.
+        routeId:
+          type: string
+          description: The ID of the route for the arriving vehicle.
+        routeLongName:
+          type: string
+          description: Optional route long name that potentially overrides the route long name in the referenced route element.
+        routeShortName:
+          type: string
+          description: Optional route short name that potentially overrides the route short name in the referenced route element.
+        scheduledArrivalInterval:
+          type:
+          - string
+          - 'null'
+          description: Interval for scheduled arrival time.
+        scheduledArrivalTime:
+          type: integer
+          description: Scheduled arrival time, in milliseconds since Unix epoch.
+        scheduledDepartureInterval:
+          type:
+          - string
+          - 'null'
+          description: Interval for scheduled departure time.
+        scheduledDepartureTime:
+          type: integer
+          description: Scheduled departure time, in milliseconds since Unix epoch.
+        scheduledTrack:
+          type: string
+          description: Scheduled track information of the arriving transit vehicle.
+        serviceDate:
+          type: integer
+          description: Time, in milliseconds since the Unix epoch, of midnight for the start of the service date for the trip.
+        situationIds:
+          type: array
+          items:
+            type: string
+          description: References to situation elements (if any) applicable to this arrival.
+        status:
+          type: string
+          description: Current status of the arrival.
+        stopId:
+          type: string
+          description: The ID of the stop the vehicle is arriving at.
+        stopSequence:
+          type: integer
+          description: Index of the stop into the sequence of stops that make up the trip for this arrival.
+        totalStopsInTrip:
+          type: integer
+          description: Total number of stops visited on the trip for this arrival.
+        tripHeadsign:
+          type: string
+          description: Optional trip headsign that potentially overrides the trip headsign in the referenced trip element.
+        tripId:
+          type: string
+          description: The ID of the trip for the arriving vehicle.
+        tripStatus:
+          $ref: '#/components/schemas/TripStatus'
+        vehicleId:
+          type: string
+          description: ID of the transit vehicle serving this trip.
+      required:
+      - stopId
+      - tripId
+      - serviceDate
+      - routeId
+      - scheduledArrivalTime
+      - scheduledDepartureTime
+      - predictedArrivalTime
+      - predictedDepartureTime
+      - stopSequence
+      - totalStopsInTrip
+      - tripHeadsign
+      - vehicleId
+      - blockTripSequence
+      - arrivalEnabled
+      - departureEnabled
+      - numberOfStopsAway
+    StopTime:
+      type: object
+      properties:
+        arrivalTime:
+          type: integer
+        departureTime:
+          type: integer
+        distanceAlongTrip:
+          type: number
+        historicalOccupancy:
+          type: string
+        stopHeadsign:
+          type: string
+        stopId:
+          type: string
+    TripDetailsResponse:
+      type: object
+      properties:
+        entry:
+          $ref: '#/components/schemas/TripEntry'
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - entry
+      - references
+    TripEntry:
+      type: object
+      properties:
+        frequency:
+          type:
+          - string
+          - 'null'
+        schedule:
+          $ref: '#/components/schemas/TripSchedule'
+        serviceDate:
+          type: integer
+        situationIds:
+          type: array
+          items:
+            type: string
+        status:
+          $ref: '#/components/schemas/TripStatus'
+        tripId:
+          type: string
+      required:
+      - tripId
     Situation:
       type: object
       properties:
@@ -901,535 +1192,6 @@ components:
       required:
       - id
       - creationTime
-    ScheduleForRouteResponse:
-      type: object
-      properties:
-        entry:
-          $ref: '#/components/schemas/ScheduleEntry'
-      required:
-      - entry
-    RoutesForLocationResponse:
-      type: object
-      properties:
-        limitExceeded:
-          type: boolean
-        list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Route'
-        outOfRange:
-          type: boolean
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - list
-      - references
-      - outOfRange
-    Agency:
-      type: object
-      properties:
-        disclaimer:
-          type: string
-        email:
-          type: string
-        fareUrl:
-          type: string
-        id:
-          type: string
-        lang:
-          type: string
-        name:
-          type: string
-        phone:
-          type: string
-        privateService:
-          type: boolean
-        timezone:
-          type: string
-        url:
-          type: string
-      required:
-      - id
-      - name
-      - timezone
-      - url
-    ArrivalsDeparturesForStopResponse:
-      type: object
-      properties:
-        entry:
-          type: object
-          properties:
-            arrivalsAndDepartures:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArrivalDepartureForStop'
-          required:
-          - arrivalsAndDepartures
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - entry
-      - references
-    StopsForLocationResponse:
-      type: object
-      properties:
-        limitExceeded:
-          type: boolean
-        outOfRange:
-          type: boolean
-        list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Stop'
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - list
-      - references
-    TripWithStopTimes:
-      type: object
-      properties:
-        tripId:
-          type: string
-        stopTimes:
-          type: array
-          items:
-            $ref: '#/components/schemas/DetailedScheduleStopTime'
-      required:
-      - tripId
-      - stopTimes
-    ArrivalsDeparturesForLocationResponse:
-      type: object
-      properties:
-        entry:
-          type: object
-          properties:
-            stopIds:
-              type: array
-              items:
-                type: string
-            arrivalsAndDepartures:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArrivalDepartureForStop'
-            nearbyStopIds:
-              type: array
-              items:
-                type: object
-                properties:
-                  stopId:
-                    type: string
-                  distanceFromQuery:
-                    type: number
-                    format: double
-            situationIds:
-              type: array
-              items:
-                type: string
-            limitExceeded:
-              type: boolean
-          required:
-          - stopIds
-          - arrivalsAndDepartures
-          - nearbyStopIds
-          - limitExceeded
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - entry
-      - references
-    Trip:
-      type: object
-      properties:
-        blockId:
-          type: string
-        directionId:
-          type: string
-        id:
-          type: string
-        peakOffpeak:
-          type: integer
-        routeId:
-          type: string
-        routeShortName:
-          type: string
-        serviceId:
-          type: string
-        shapeId:
-          type: string
-        timeZone:
-          type: string
-        tripHeadsign:
-          type: string
-        tripShortName:
-          type: string
-      required:
-      - id
-      - routeId
-      - serviceId
-    CurrentTimeResponse:
-      type: object
-      properties:
-        entry:
-          $ref: '#/components/schemas/CurrentTime'
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - entry
-      - references
-    TripDetailsResponse:
-      type: object
-      properties:
-        entry:
-          $ref: '#/components/schemas/TripEntry'
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - entry
-      - references
-    CoverageResponse:
-      type: object
-      properties:
-        limitExceeded:
-          type: boolean
-        list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Coverage'
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - list
-      - references
-    RoutesForAgencyResponse:
-      type: object
-      properties:
-        limitExceeded:
-          type: boolean
-        list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Route'
-        references:
-          $ref: '#/components/schemas/Reference'
-      required:
-      - list
-      - references
-    Stop:
-      type: object
-      properties:
-        code:
-          type: string
-        direction:
-          type: string
-        id:
-          type: string
-        lat:
-          type: number
-        locationType:
-          type: integer
-        lon:
-          type: number
-        name:
-          type: string
-        parent:
-          type: string
-        routeIds:
-          type: array
-          items:
-            type: string
-        staticRouteIds:
-          type: array
-          items:
-            type: string
-        wheelchairBoarding:
-          type: string
-      required:
-      - id
-      - lat
-      - lon
-      - name
-      - parent
-      - routeIds
-      - staticRouteIds
-      - locationType
-    ArrivalDepartureForStop:
-      type: object
-      properties:
-        actualTrack:
-          type: string
-          description: The actual track information of the arriving transit vehicle.
-        arrivalEnabled:
-          type: boolean
-          description: Indicates if riders can arrive on this transit vehicle.
-        blockTripSequence:
-          type: integer
-          description: Index of this arrival’s trip into the sequence of trips for the active block.
-        departureEnabled:
-          type: boolean
-          description: Indicates if riders can depart from this transit vehicle.
-        distanceFromStop:
-          type: number
-          description: Distance of the arriving transit vehicle from the stop, in meters.
-        frequency:
-          type: string
-          nullable: true
-          description: Information about frequency-based scheduling, if applicable to the trip.
-        historicalOccupancy:
-          type: string
-          description: Historical occupancy information of the transit vehicle.
-        lastUpdateTime:
-          type: integer
-          description: Timestamp of the last update time for this arrival.
-        numberOfStopsAway:
-          type: integer
-          description: Number of stops between the arriving transit vehicle and the current stop (excluding the current stop).
-        occupancyStatus:
-          type: string
-          description: Current occupancy status of the transit vehicle.
-        predicted:
-          type: boolean
-          description: Indicates if real-time arrival info is available for this trip.
-        predictedArrivalInterval:
-          type: string
-          nullable: true
-          description: Interval for predicted arrival time, if available.
-        predictedArrivalTime:
-          type: integer
-          description: Predicted arrival time, in milliseconds since Unix epoch (zero if no real-time available).
-        predictedDepartureInterval:
-          type: string
-          nullable: true
-          description: Interval for predicted departure time, if available.
-        predictedDepartureTime:
-          type: integer
-          description: Predicted departure time, in milliseconds since Unix epoch (zero if no real-time available).
-        predictedOccupancy:
-          type: string
-          description: Predicted occupancy status of the transit vehicle.
-        routeId:
-          type: string
-          description: The ID of the route for the arriving vehicle.
-        routeLongName:
-          type: string
-          description: Optional route long name that potentially overrides the route long name in the referenced route element.
-        routeShortName:
-          type: string
-          description: Optional route short name that potentially overrides the route short name in the referenced route element.
-        scheduledArrivalInterval:
-          type: string
-          nullable: true
-          description: Interval for scheduled arrival time.
-        scheduledArrivalTime:
-          type: integer
-          description: Scheduled arrival time, in milliseconds since Unix epoch.
-        scheduledDepartureInterval:
-          type: string
-          nullable: true
-          description: Interval for scheduled departure time.
-        scheduledDepartureTime:
-          type: integer
-          description: Scheduled departure time, in milliseconds since Unix epoch.
-        scheduledTrack:
-          type: string
-          description: Scheduled track information of the arriving transit vehicle.
-        serviceDate:
-          type: integer
-          description: Time, in milliseconds since the Unix epoch, of midnight for the start of the service date for the trip.
-        situationIds:
-          type: array
-          items:
-            type: string
-          description: References to situation elements (if any) applicable to this arrival.
-        status:
-          type: string
-          description: Current status of the arrival.
-        stopId:
-          type: string
-          description: The ID of the stop the vehicle is arriving at.
-        stopSequence:
-          type: integer
-          description: Index of the stop into the sequence of stops that make up the trip for this arrival.
-        totalStopsInTrip:
-          type: integer
-          description: Total number of stops visited on the trip for this arrival.
-        tripHeadsign:
-          type: string
-          description: Optional trip headsign that potentially overrides the trip headsign in the referenced trip element.
-        tripId:
-          type: string
-          description: The ID of the trip for the arriving vehicle.
-        tripStatus:
-          $ref: '#/components/schemas/TripStatus'
-        vehicleId:
-          type: string
-          description: ID of the transit vehicle serving this trip.
-      required:
-      - stopId
-      - tripId
-      - serviceDate
-      - routeId
-      - scheduledArrivalTime
-      - scheduledDepartureTime
-      - predictedArrivalTime
-      - predictedDepartureTime
-      - stopSequence
-      - totalStopsInTrip
-      - tripHeadsign
-      - vehicleId
-      - blockTripSequence
-      - arrivalEnabled
-      - departureEnabled
-      - numberOfStopsAway
-    TripSchedule:
-      type: object
-      nullable: true
-      properties:
-        frequency:
-          type: string
-          nullable: true
-        nextTripId:
-          type: string
-        previousTripId:
-          type: string
-        stopTimes:
-          type: array
-          items:
-            $ref: '#/components/schemas/StopTime'
-        timeZone:
-          type: string
-      required:
-      - stopTimes
-      - timeZone
-      - nextTripId
-      - previousTripId
-    Config:
-      type: object
-      properties:
-        gitProperties:
-          type: object
-          properties:
-            git.branch:
-              type: string
-            git.build.host:
-              type: string
-            git.build.time:
-              type: string
-            git.build.user.email:
-              type: string
-            git.build.user.name:
-              type: string
-            git.build.version:
-              type: string
-            git.closest.tag.commit.count:
-              type: string
-            git.closest.tag.name:
-              type: string
-            git.commit.id:
-              type: string
-            git.commit.id.abbrev:
-              type: string
-            git.commit.id.describe:
-              type: string
-            git.commit.id.describe-short:
-              type: string
-            git.commit.message.full:
-              type: string
-            git.commit.message.short:
-              type: string
-            git.commit.time:
-              type: string
-            git.commit.user.email:
-              type: string
-            git.commit.user.name:
-              type: string
-            git.dirty:
-              type: string
-            git.remote.origin.url:
-              type: string
-            git.tags:
-              type: string
-        id:
-          type: string
-        name:
-          type: string
-        serviceDateFrom:
-          type: string
-        serviceDateTo:
-          type: string
-    ScheduleEntry:
-      type: object
-      properties:
-        routeId:
-          type: string
-        scheduleDate:
-          type: integer
-        serviceIds:
-          type: array
-          items:
-            type: string
-        stopTripGroupings:
-          type: array
-          items:
-            $ref: '#/components/schemas/StopTripGrouping'
-      required:
-      - routeId
-      - scheduleDate
-      - serviceIds
-      - stopTripGroupings
-    StopTripGrouping:
-      type: object
-      properties:
-        directionId:
-          type: string
-        stopIds:
-          type: array
-          items:
-            type: string
-        tripHeadsigns:
-          type: array
-          items:
-            type: string
-        tripIds:
-          type: array
-          items:
-            type: string
-        tripsWithStopTimes:
-          type: array
-          items:
-            $ref: '#/components/schemas/TripWithStopTimes'
-      required:
-      - directionId
-      - stopIds
-      - tripHeadsigns
-      - tripIds
-    Route:
-      type: object
-      properties:
-        agencyId:
-          type: string
-        color:
-          type: string
-        description:
-          type: string
-        id:
-          type: string
-        longName:
-          type: string
-        nullSafeShortName:
-          type: string
-        shortName:
-          type: string
-        textColor:
-          type: string
-        type:
-          type: integer
-        url:
-          type: string
-      required:
-      - id
-      - type
-      - agencyId
     TripStatus:
       type: object
       description: Trip-specific status for the arriving transit vehicle.
@@ -1450,15 +1212,17 @@ components:
           type: number
           description: Distance, in meters, the transit vehicle has progressed along the active trip.
         frequency:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
           description: Information about frequency-based scheduling, if applicable to the trip.
         lastKnownDistanceAlongTrip:
           type: number
           description: Last known distance along the trip received in real-time from the transit vehicle.
         lastKnownLocation:
-          type: object
-          nullable: true
+          type:
+          - object
+          - 'null'
           properties:
             lat:
               type: number
@@ -1550,29 +1314,300 @@ components:
       - serviceDate
       - status
       - totalDistanceAlongTrip
-    TripDetails:
-      type: object
+    TripSchedule:
+      type:
+      - object
+      - 'null'
       properties:
         frequency:
+          type:
+          - string
+          - 'null'
+        nextTripId:
           type: string
-          nullable: true
-        serviceDate:
+        previousTripId:
+          type: string
+        stopTimes:
+          type: array
+          items:
+            $ref: '#/components/schemas/StopTime'
+        timeZone:
+          type: string
+      required:
+      - stopTimes
+      - timeZone
+      - nextTripId
+      - previousTripId
+    Route:
+      type: object
+      properties:
+        agencyId:
+          type: string
+        color:
+          type: string
+        description:
+          type: string
+        id:
+          type: string
+        longName:
+          type: string
+        nullSafeShortName:
+          type: string
+        shortName:
+          type: string
+        textColor:
+          type: string
+        type:
           type: integer
-          format: int64
-        situationIds:
+        url:
+          type: string
+      required:
+      - id
+      - type
+      - agencyId
+    StopsForLocationResponse:
+      type: object
+      properties:
+        limitExceeded:
+          type: boolean
+        outOfRange:
+          type: boolean
+        list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Stop'
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - list
+      - references
+    RoutesForAgencyResponse:
+      type: object
+      properties:
+        limitExceeded:
+          type: boolean
+        list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Route'
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - list
+      - references
+    CurrentTime:
+      type: object
+      properties:
+        readableTime:
+          type: string
+        time:
+          type: integer
+    Stop:
+      type: object
+      properties:
+        code:
+          type: string
+        direction:
+          type: string
+        id:
+          type: string
+        lat:
+          type: number
+        locationType:
+          type: integer
+        lon:
+          type: number
+        name:
+          type: string
+        parent:
+          type: string
+        routeIds:
           type: array
           items:
             type: string
-        tripId:
+        staticRouteIds:
+          type: array
+          items:
+            type: string
+        wheelchairBoarding:
           type: string
-        schedule:
-          $ref: '#/components/schemas/TripSchedule'
-        status:
-          $ref: '#/components/schemas/TripStatus'
       required:
-      - tripId
-      - schedule
-      - status
+      - id
+      - lat
+      - lon
+      - name
+      - parent
+      - routeIds
+      - staticRouteIds
+      - locationType
+    TripVehicleResponse:
+      type: object
+      properties:
+        entry:
+          $ref: '#/components/schemas/TripEntry'
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - entry
+      - references
+    TimeWindow:
+      type: object
+      properties:
+        from:
+          type: integer
+          format: int64
+          description: Start time of the time window as a Unix timestamp.
+        to:
+          type: integer
+          format: int64
+          description: End time of the time window as a Unix timestamp.
+      required:
+      - from
+      - to
+    Coverage:
+      type: object
+      properties:
+        agencyId:
+          type: string
+        lat:
+          type: number
+        latSpan:
+          type: number
+        lon:
+          type: number
+        lonSpan:
+          type: number
+      required:
+      - agencyId
+      - lat
+      - latSpan
+      - lon
+      - lonSpan
+    ScheduleEntry:
+      type: object
+      properties:
+        routeId:
+          type: string
+        scheduleDate:
+          type: integer
+        serviceIds:
+          type: array
+          items:
+            type: string
+        stopTripGroupings:
+          type: array
+          items:
+            $ref: '#/components/schemas/StopTripGrouping'
+      required:
+      - routeId
+      - scheduleDate
+      - serviceIds
+      - stopTripGroupings
+    ArrivalsDeparturesForLocationResponse:
+      type: object
+      properties:
+        entry:
+          type: object
+          properties:
+            stopIds:
+              type: array
+              items:
+                type: string
+            arrivalsAndDepartures:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArrivalDepartureForStop'
+            nearbyStopIds:
+              type: array
+              items:
+                type: object
+                properties:
+                  stopId:
+                    type: string
+                  distanceFromQuery:
+                    type: number
+                    format: double
+            situationIds:
+              type: array
+              items:
+                type: string
+            limitExceeded:
+              type: boolean
+          required:
+          - stopIds
+          - arrivalsAndDepartures
+          - nearbyStopIds
+          - limitExceeded
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - entry
+      - references
+    RoutesForLocationResponse:
+      type: object
+      properties:
+        limitExceeded:
+          type: boolean
+        list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Route'
+        outOfRange:
+          type: boolean
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - list
+      - references
+      - outOfRange
+    Reference:
+      type: object
+      properties:
+        agencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Agency'
+        routes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Route'
+        situations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Situation'
+        stopTimes:
+          type: array
+          items:
+            $ref: '#/components/schemas/StopTime'
+        stops:
+          type: array
+          items:
+            $ref: '#/components/schemas/Stop'
+        trips:
+          type: array
+          items:
+            $ref: '#/components/schemas/Trip'
+      required:
+      - agencies
+      - routes
+      - situations
+      - stopTimes
+      - stops
+      - trips
+    CoverageResponse:
+      type: object
+      properties:
+        limitExceeded:
+          type: boolean
+        list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Coverage'
+        references:
+          $ref: '#/components/schemas/Reference'
+      required:
+      - list
+      - references
   responses:
     NotFound:
       description: Resource not found.
