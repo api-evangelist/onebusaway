@@ -52,7 +52,7 @@ tags:
   - Departures
   - Bus
   - GTFS
-  - Open-Source
+  - Open Source
   - Stop Data
   - Trip Planning
   - Service Alerts
@@ -72,13 +72,14 @@ tags_raw:
   - Service Alerts
   - Vehicle Positions
   - Open Data
+  - Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/onebusaway/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
 specificationVersion: '0.23'
 apis:
 - aid: onebusaway:onebusaway-default-api
-  name: OneBusAway default API
+  name: OneBusAway Default API
   description: The default API from OneBusAway — 13 operation(s) for default.
   humanURL: https://developer.onebusaway.org/api/where
   baseURL: https://api.pugetsound.onebusaway.org
