@@ -75,7 +75,7 @@ tags_raw:
   - Open-Source
 url: https://raw.githubusercontent.com/api-evangelist/onebusaway/refs/heads/main/apis.yml
 created: '2026-06-13'
-modified: '2026-06-13'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: onebusaway:onebusaway-default-api
@@ -120,6 +120,8 @@ apis:
   - type: GitHubRepository
     url: https://github.com/OneBusAway/sdk-config
 common:
+  - url: https://opentransitsoftwarefoundation.org/blog
+    type: Blog
   - type: IssueTracker
     url: https://github.com/OneBusAway/sdk-config/issues
   - type: License
