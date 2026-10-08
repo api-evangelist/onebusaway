@@ -120,6 +120,8 @@ apis:
   - type: GitHubRepository
     url: https://github.com/OneBusAway/sdk-config
 common:
+  - type: Plans
+    url: plans/onebusaway-plans-pricing.yml
   - url: https://opentransitsoftwarefoundation.org/blog
     type: Blog
   - type: IssueTracker
