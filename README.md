@@ -1,4 +1,4 @@
-# OneBusAway (onebusaway)
+# OneBusAway
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,95 +66,181 @@
 
 OneBusAway is an open-source real-time transit information platform managed by the Open Transit Software Foundation. It provides transit riders with real-time arrival predictions, service alerts, and schedule data for buses, trains, and other transit modes. The platform exposes a RESTful API that lets developers access agency information, stop data, route details, trip information, real-time arrivals and departures, vehicle positions, and service alerts. Authentication uses an API key passed as a query parameter. The reference deployment runs at api.pugetsound.onebusaway.org; many transit agencies host their own OneBusAway instances using the same API contract. Official SDKs are published for Go, Java, Kotlin, JavaScript/Node.js, Python, and Ruby, all generated from a shared OpenAPI 3.0 specification in the sdk-config repository.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/onebusaway/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/onebusaway/refs/heads/main/apis.yml)
+**Areas:** Transit · Public Transit · Real-Time · Arrivals · Departures · Bus · GTFS · Open Source · Stop Data · Trip Planning · Service Alerts · Vehicle Positions
 
-## Scope
+## OneBusAway on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** Open
+Everything profiled for OneBusAway is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/onebusaway/](https://apis.io/providers/onebusaway/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Transit
-- Public Transit
-- Real-Time
-- Arrivals
-- Departures
-- Bus
-- GTFS
-- Open Source
-- Stop Data
-- Trip Planning
-- Service Alerts
-- Vehicle Positions
-- Open Data
+- [OneBusAway Default API](https://apis.io/apis/onebusaway/onebusaway-default-api/) — The default API from OneBusAway — 13 operation(s) for default.
+- [OneBusAway Where API](https://apis.io/apis/onebusaway/onebusaway-where-api/) — The Where API from OneBusAway — 17 operation(s) for where.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-06-13
-- **Modified:** 2026-06-13
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### OneBusAway REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-RESTful web service providing real-time and scheduled transit data for agencies running the OneBusAway platform. Endpoints cover agencies with coverage, individual agency details, routes, stops, trips, real-time arrivals and departures, active vehicle positions, schedule information for stops and routes, shape/polyline data, block configuration, search for stops and routes by location or name, and user-submitted problem reports. Authentication is an API key supplied as the "key" query parameter. Responses are available in both JSON and XML; JSON responses support an optional JSONP callback parameter. The reference server is the Puget Sound deployment at api.pugetsound.onebusaway.org; transit agencies can self-host using the open-source application modules.
+- [Onebusaway Agentic Access](https://apis.io/agentic-access/onebusaway/onebusaway-agentic-access/)
 
-- **Human URL:** [https://developer.onebusaway.org/api/where](https://developer.onebusaway.org/api/where)
-- **Base URL:** `https://api.pugetsound.onebusaway.org`
+#### JSON Schema (61)
 
-#### Tags
+The data models the API reads and writes.
 
-- Transit
-- Real-Time
-- Arrivals
-- Departures
-- Stops
-- Routes
-- Trips
-- Agencies
-- Vehicle Positions
-- Service Alerts
-- Schedule
-- GTFS
+- [Agency](https://apis.io/schemas/onebusaway/Agency/)
+- [AgencyResponse](https://apis.io/schemas/onebusaway/AgencyResponse/)
+- [ArrivalDepartureForStop](https://apis.io/schemas/onebusaway/ArrivalDepartureForStop/)
+- [ArrivalDepartureForStopResponse](https://apis.io/schemas/onebusaway/ArrivalDepartureForStopResponse/)
+- [ArrivalsDeparturesForLocationResponse](https://apis.io/schemas/onebusaway/ArrivalsDeparturesForLocationResponse/)
+- [ArrivalsDeparturesForStopResponse](https://apis.io/schemas/onebusaway/ArrivalsDeparturesForStopResponse/)
+- [BlockConfiguration](https://apis.io/schemas/onebusaway/BlockConfiguration/)
+- [BlockEntry](https://apis.io/schemas/onebusaway/BlockEntry/)
+- [BlockResponse](https://apis.io/schemas/onebusaway/BlockResponse/)
+- [BlockStopTime](https://apis.io/schemas/onebusaway/BlockStopTime/)
+- [BlockTrip](https://apis.io/schemas/onebusaway/BlockTrip/)
+- [Config](https://apis.io/schemas/onebusaway/Config/)
+- [ConfigResponse](https://apis.io/schemas/onebusaway/ConfigResponse/)
+- [Coverage](https://apis.io/schemas/onebusaway/Coverage/)
+- [CoverageResponse](https://apis.io/schemas/onebusaway/CoverageResponse/)
+- [CurrentTime](https://apis.io/schemas/onebusaway/CurrentTime/)
+- [CurrentTimeResponse](https://apis.io/schemas/onebusaway/CurrentTimeResponse/)
+- [DetailedScheduleStopTime](https://apis.io/schemas/onebusaway/DetailedScheduleStopTime/)
+- [Location](https://apis.io/schemas/onebusaway/Location/)
+- [Polylines](https://apis.io/schemas/onebusaway/Polylines/)
+- [Reference](https://apis.io/schemas/onebusaway/Reference/)
+- [ResponseWrapper](https://apis.io/schemas/onebusaway/ResponseWrapper/)
+- [Route](https://apis.io/schemas/onebusaway/Route/)
+- [RouteIDsForAgencyResponse](https://apis.io/schemas/onebusaway/RouteIDsForAgencyResponse/)
+- [RouteResponse](https://apis.io/schemas/onebusaway/RouteResponse/)
+- …and 36 more published on APIs.io
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://developer.onebusaway.org/api/where)
-- [Documentation](https://developer.onebusaway.org/api/where/methods)
-- [Documentation](https://developer.onebusaway.org/api/where/elements)
-- [OpenAPI](https://raw.githubusercontent.com/OneBusAway/sdk-config/main/openapi.yml)
-- [SDK](https://developer.onebusaway.org/api/sdk)
-- [GitHub Repository](https://github.com/OneBusAway/sdk-config) — OpenAPI + SDK Config
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [context Context](https://apis.io/jsonld/onebusaway/context/)
+
+#### Examples (30)
+
+Example requests and responses.
+
+- [Getarrivalsanddeparturesforlocation](https://apis.io/examples/onebusaway/getArrivalsAndDeparturesForLocation/)
+- [Get_Api_Where_Agencies With Coverage.Json](https://apis.io/examples/onebusaway/get_api_where_agencies-with-coverage.json/)
+- [Get_Api_Where_Agency_Agencyid.Json](https://apis.io/examples/onebusaway/get_api_where_agency_agencyID.json/)
+- [Get_Api_Where_Arrival And Departure For Stop_Stopid.Json](https://apis.io/examples/onebusaway/get_api_where_arrival-and-departure-for-stop_stopID.json/)
+- [Get_Api_Where_Arrivals And Departures For Stop_Stopid.Json](https://apis.io/examples/onebusaway/get_api_where_arrivals-and-departures-for-stop_stopID.json/)
+- [Get_Api_Where_Block_Blockid.Json](https://apis.io/examples/onebusaway/get_api_where_block_blockID.json/)
+- [Get_Api_Where_Config.Json](https://apis.io/examples/onebusaway/get_api_where_config.json/)
+- [Get_Api_Where_Current Time.Json](https://apis.io/examples/onebusaway/get_api_where_current-time.json/)
+- [Get_Api_Where_Route Ids For Agency_Agencyid.Json](https://apis.io/examples/onebusaway/get_api_where_route-ids-for-agency_agencyID.json/)
+- [Get_Api_Where_Route_Routeid.Json](https://apis.io/examples/onebusaway/get_api_where_route_routeID.json/)
+- [Get_Api_Where_Routes For Agency_Agencyid.Json](https://apis.io/examples/onebusaway/get_api_where_routes-for-agency_agencyID.json/)
+- [Get_Api_Where_Routes For Location.Json](https://apis.io/examples/onebusaway/get_api_where_routes-for-location.json/)
+- [Get_Api_Where_Schedule For Route_Routeid.Json](https://apis.io/examples/onebusaway/get_api_where_schedule-for-route_routeID.json/)
+- [Get_Api_Where_Schedule For Stop_Stopid.Json](https://apis.io/examples/onebusaway/get_api_where_schedule-for-stop_stopID.json/)
+- [Get_Api_Where_Shape_Shapeid.Json](https://apis.io/examples/onebusaway/get_api_where_shape_shapeID.json/)
+- [Get_Api_Where_Stop Ids For Agency_Agencyid.Json](https://apis.io/examples/onebusaway/get_api_where_stop-ids-for-agency_agencyID.json/)
+- [Get_Api_Where_Stop_Stopid.Json](https://apis.io/examples/onebusaway/get_api_where_stop_stopID.json/)
+- [Get_Api_Where_Stops For Agency_Agencyid.Json](https://apis.io/examples/onebusaway/get_api_where_stops-for-agency_agencyID.json/)
+- [Get_Api_Where_Stops For Location.Json](https://apis.io/examples/onebusaway/get_api_where_stops-for-location.json/)
+- [Get_Api_Where_Stops For Route_Routeid.Json](https://apis.io/examples/onebusaway/get_api_where_stops-for-route_routeID.json/)
+- [Get_Api_Where_Trip Details_Tripid.Json](https://apis.io/examples/onebusaway/get_api_where_trip-details_tripID.json/)
+- [Get_Api_Where_Trip For Vehicle_Vehicleid.Json](https://apis.io/examples/onebusaway/get_api_where_trip-for-vehicle_vehicleID.json/)
+- [Get_Api_Where_Trip_Tripid.Json](https://apis.io/examples/onebusaway/get_api_where_trip_tripID.json/)
+- [Get_Api_Where_Trips For Location.Json](https://apis.io/examples/onebusaway/get_api_where_trips-for-location.json/)
+- [Get_Api_Where_Trips For Route_Routeid.Json](https://apis.io/examples/onebusaway/get_api_where_trips-for-route_routeID.json/)
+- …and 5 more published on APIs.io
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [OneBusAway default API](https://apis.io/collections/onebusaway/open-onebusaway-default-api/)
+- [OneBusAway default Where API](https://apis.io/collections/onebusaway/open-onebusaway-where-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [OneBusAway — jsonschema rules](https://apis.io/rules/onebusaway/onebusaway-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Onebusaway Authentication](https://apis.io/security/onebusaway/onebusaway-authentication/)
+- [Onebusaway Domain Security](https://apis.io/security/onebusaway/onebusaway-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Onebusaway Plans Pricing](https://apis.io/plans/onebusaway/onebusaway-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://opentransitsoftwarefoundation.org/onebusaway/)
-- [Portal](https://developer.onebusaway.org/)
 - [Documentation](https://developer.onebusaway.org/api/where)
-- [Documentation](https://developer.onebusaway.org/api/where/methods)
-- [Documentation](https://developer.onebusaway.org/api/where/elements)
-- [Getting Started](https://developer.onebusaway.org/guides/api-webapp-configuration-guide)
-- [SDK](https://developer.onebusaway.org/api/sdk)
-- [GitHub Organization](https://github.com/OneBusAway)
-- [GitHub Repository](https://github.com/OneBusAway/onebusaway-application-modules) — Core Application Modules (Java)
-- [GitHub Repository](https://github.com/OneBusAway/maglev) — Maglev — Next-Gen OBA REST API Server (Go)
-- [GitHub Repository](https://github.com/OneBusAway/sdk-config) — OpenAPI Specification and SDK Config
-- [GitHub Repository](https://github.com/OneBusAway/js-sdk) — JavaScript / Node.js SDK
-- [GitHub Repository](https://github.com/OneBusAway/python-sdk) — Python SDK
-- [GitHub Repository](https://github.com/OneBusAway/go-sdk) — Go SDK
-- [GitHub Repository](https://github.com/OneBusAway/java-sdk) — Java SDK
-- [GitHub Repository](https://github.com/OneBusAway/kotlin-sdk) — Kotlin SDK
-- [GitHub Repository](https://github.com/OneBusAway/ruby-sdk) — Ruby SDK
-- [GitHub Repository](https://github.com/OneBusAway/onebusaway-android) — Android App
-- [GitHub Repository](https://github.com/OneBusAway/onebusaway-ios) — iOS App
-- [GitHub Repository](https://github.com/OneBusAway/wayfinder) — Wayfinder Web App (SvelteKit)
-- [App Store](https://apps.apple.com/app/onebusaway/id329380089)
-- [Play Store](https://play.google.com/store/apps/details?id=com.joulespersecond.seattlebusbot)
-- [Privacy Policy](https://opentransitsoftwarefoundation.org/privacy-policy/)
+- [Getting started](https://developer.onebusaway.org/guides/api-webapp-configuration-guide)
+- [Blog](https://opentransitsoftwarefoundation.org/blog)
+- [Privacy policy](https://opentransitsoftwarefoundation.org/privacy-policy/)
+- [GitHub](https://github.com/OneBusAway)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 47.6 |
+| Contract governance | 9.8 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 52.4 |
+| Access clarity | 5.3 |
+
+**Agent readiness 22.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/onebusaway/](https://apis.io/providers/onebusaway/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for OneBusAway: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/onebusaway/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
